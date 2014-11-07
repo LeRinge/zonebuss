@@ -1,0 +1,527 @@
+{
+    "result": {
+        "code": 200,
+        "info": "OK"
+    },
+    "data": {
+        "size": "23",
+        "categories": [
+            {
+                "code": "mx_auto",
+                "description": "Car",
+                "subcategories": [
+                    {
+                        "code": "mx_car",
+                        "description": "Cars And Accessories"
+                    },
+                    {
+                        "code": "mx_gas",
+                        "description": "Gas Stations"
+                    },
+                    {
+                        "code": "mx_tow",
+                        "description": "Towing"
+                    },
+                    {
+                        "code": "mx_wash",
+                        "description": "Carwash"
+                    },
+                    {
+                        "code": "mx_mechanics",
+                        "description": "Mechanics"
+                    }
+                ]
+            },
+            {
+                "code": "mx_barsandrestaurants",
+                "description": "Bars And Restaurants",
+                "subcategories": [
+                    {
+                        "code": "mx_bars",
+                        "description": "Bars"
+                    },
+                    {
+                        "code": "mx_fastfood",
+                        "description": "Fast Food"
+                    },
+                    {
+                        "code": "mx_restaurant",
+                        "description": "Restaurants"
+                    }
+                ]
+            },
+            {
+                "code": "mx_beauty",
+                "description": "Beauty",
+                "subcategories": [
+                    {
+                        "code": "mx_beautyclinics",
+                        "description": "Beauty Clinics"
+                    },
+                    {
+                        "code": "mx_cosmetics",
+                        "description": "Cosmetics"
+                    },
+                    {
+                        "code": "mx_beautysalon",
+                        "description": "Beauty Salons"
+                    }
+                ]
+            },
+            {
+                "code": "mx_book",
+                "description": "Book Store",
+                "subcategories": [
+                    {
+                        "code": "mx_books",
+                        "description": "Bookstores"
+                    }
+                ]
+            },
+            {
+                "code": "mx_constructionmaterials",
+                "description": "Construction Material",
+                "subcategories": [
+                    {
+                        "code": "mx_diy",
+                        "description": "Hardware Store"
+                    },
+                    {
+                        "code": "mx_materials",
+                        "description": "Materials"
+                    },
+                    {
+                        "code": "mx_paint",
+                        "description": "Paint"
+                    }
+                ]
+            },
+            {
+                "code": "mx_education",
+                "description": "Education",
+                "subcategories": [
+                    {
+                        "code": "mx_playschool",
+                        "description": "Kindergarten"
+                    },
+                    {
+                        "code": "mx_education_sub",
+                        "description": "Schools And Universities"
+                    }
+                ]
+            },
+            {
+                "code": "mx_fashion",
+                "description": "Fashion",
+                "subcategories": [
+                    {
+                        "code": "mx_fashionaccessories",
+                        "description": "Fashion Accessories"
+                    },
+                    {
+                        "code": "mx_fashionwomen",
+                        "description": "Women Fashion"
+                    },
+                    {
+                        "code": "mx_fashionkids",
+                        "description": "Children Fashion"
+                    },
+                    {
+                        "code": "mx_fashiongeneral",
+                        "description": "Fashion In General"
+                    },
+                    {
+                        "code": "mx_uniforms",
+                        "description": "Uniforms"
+                    }
+                ]
+            },
+            {
+                "code": "mx_food",
+                "description": "Food",
+                "subcategories": [
+                    {
+                        "code": "mx_foodstore",
+                        "description": "Food Stores"
+                    },
+                    {
+                        "code": "mx_fishandbutchers",
+                        "description": "Fish And Butcher Shops"
+                    },
+                    {
+                        "code": "mx_sweets",
+                        "description": "Sweets"
+                    },
+                    {
+                        "code": "mx_bakery",
+                        "description": "Bakery"
+                    }
+                ]
+            },
+            {
+                "code": "mx_health",
+                "description": "Heath",
+                "subcategories": [
+                    {
+                        "code": "mx_ambulance",
+                        "description": "Ambulances"
+                    },
+                    {
+                        "code": "mx_healthequipment",
+                        "description": "Health Equipment"
+                    },
+                    {
+                        "code": "mx_doctors",
+                        "description": "Doctors"
+                    },
+                    {
+                        "code": "mx_pharmacy",
+                        "description": "Pharmacy"
+                    },
+                    {
+                        "code": "mx_hospital",
+                        "description": "Hospitals"
+                    },
+                    {
+                        "code": "mx_lab",
+                        "description": "Labs"
+                    },
+                    {
+                        "code": "mx_opticians",
+                        "description": "Opticians"
+                    }
+                ]
+            },
+            {
+                "code": "mx_home",
+                "description": "Home",
+                "subcategories": [
+                    {
+                        "code": "mx_homeaccessories",
+                        "description": "Home Accessories"
+                    },
+                    {
+                        "code": "mx_antiques",
+                        "description": "Antique Shops"
+                    },
+                    {
+                        "code": "mx_florists",
+                        "description": "Florists"
+                    },
+                    {
+                        "code": "mx_photo",
+                        "description": "Photography"
+                    },
+                    {
+                        "code": "mx_gardening",
+                        "description": "Gardening"
+                    },
+                    {
+                        "code": "mx_haberdashery",
+                        "description": "Haberdashery"
+                    },
+                    {
+                        "code": "mx_homefurniture",
+                        "description": "Home Furniture"
+                    },
+                    {
+                        "code": "mx_goods",
+                        "description": "Gifts And Crafts"
+                    },
+                    {
+                        "code": "mx_homeservices",
+                        "description": "Home Services"
+                    },
+                    {
+                        "code": "mx_tobacconists",
+                        "description": "Tobbacconists"
+                    }
+                ]
+            },
+            {
+                "code": "mx_hyper",
+                "description": "Mall",
+                "subcategories": [
+                    {
+                        "code": "mx_mall",
+                        "description": "Department Stores"
+                    }
+                ]
+            },
+            {
+                "code": "mx_jewelry",
+                "description": "Jewelry",
+                "subcategories": [
+                    {
+                        "code": "mx_jewelry_sub",
+                        "description": "Jewelry Shops"
+                    }
+                ]
+            },
+            {
+                "code": "mx_leisure",
+                "description": "Leisure",
+                "subcategories": [
+                    {
+                        "code": "mx_leisuretime",
+                        "description": "Leisure Time"
+                    },
+                    {
+                        "code": "mx_billiards",
+                        "description": "Billiards"
+                    },
+                    {
+                        "code": "mx_bowling",
+                        "description": "Bowling"
+                    },
+                    {
+                        "code": "mx_bet",
+                        "description": "Casinos"
+                    },
+                    {
+                        "code": "mx_theatre",
+                        "description": "Theaters And Cinemas"
+                    },
+                    {
+                        "code": "mx_art",
+                        "description": "Art Galleries"
+                    },
+                    {
+                        "code": "mx_boardgame",
+                        "description": "Board Games"
+                    },
+                    {
+                        "code": "mx_leisureothers",
+                        "description": "Entertainment"
+                    },
+                    {
+                        "code": "mx_videorental",
+                        "description": "Video Rental"
+                    }
+                ]
+            },
+            {
+                "code": "mx_music",
+                "description": "Music",
+                "subcategories": [
+                    {
+                        "code": "mx_musicbands",
+                        "description": "Music Bands"
+                    },
+                    {
+                        "code": "mx_disc",
+                        "description": "Disc"
+                    },
+                    {
+                        "code": "mx_musicalinstrument",
+                        "description": "Musical Instruments"
+                    }
+                ]
+            },
+            {
+                "code": "mx_office",
+                "description": "Office",
+                "subcategories": [
+                    {
+                        "code": "mx_officeaccessories",
+                        "description": "Office Accessories"
+                    },
+                    {
+                        "code": "mx_officeequipment",
+                        "description": "Office Equipment"
+                    },
+                    {
+                        "code": "mx_officesfurniture",
+                        "description": "Office Furniture"
+                    },
+                    {
+                        "code": "mx_officeservices",
+                        "description": "Office Services"
+                    }
+                ]
+            },
+            {
+                "code": "mx_others",
+                "description": "Others",
+                "subcategories": [
+                    {
+                        "code": "mx_others_sub",
+                        "description": "Other Merchants"
+                    }
+                ]
+            },
+            {
+                "code": "mx_pet",
+                "description": "Pet Shops",
+                "subcategories": [
+                    {
+                        "code": "mx_pets",
+                        "description": "Pets"
+                    }
+                ]
+            },
+            {
+                "code": "mx_services",
+                "description": "Services",
+                "subcategories": [
+                    {
+                        "code": "mx_warehouse",
+                        "description": "Warehouse"
+                    },
+                    {
+                        "code": "mx_architects",
+                        "description": "Architecture"
+                    },
+                    {
+                        "code": "mx_realestate",
+                        "description": "Real State"
+                    },
+                    {
+                        "code": "mx_cable",
+                        "description": "Cable"
+                    },
+                    {
+                        "code": "mx_pawnshops",
+                        "description": "Pawn Shops"
+                    },
+                    {
+                        "code": "mx_consulting",
+                        "description": "Consulting"
+                    },
+                    {
+                        "code": "mx_accounting",
+                        "description": "Accounting"
+                    },
+                    {
+                        "code": "mx_contractor",
+                        "description": "Contractors"
+                    },
+                    {
+                        "code": "mx_tempagency",
+                        "description": "Employment"
+                    },
+                    {
+                        "code": "mx_finance",
+                        "description": "Finance"
+                    },
+                    {
+                        "code": "mx_fumigate",
+                        "description": "Fumigators"
+                    },
+                    {
+                        "code": "mx_funeral",
+                        "description": "Funeral Homes"
+                    },
+                    {
+                        "code": "mx_lawyer",
+                        "description": "Lawyers"
+                    },
+                    {
+                        "code": "mx_cleaning",
+                        "description": "Cleaning Services"
+                    },
+                    {
+                        "code": "mx_moving",
+                        "description": "Moving Services"
+                    },
+                    {
+                        "code": "mx_otherservices",
+                        "description": "Other Services"
+                    },
+                    {
+                        "code": "mx_designprogramming",
+                        "description": "Design And Programming"
+                    },
+                    {
+                        "code": "mx_publicity",
+                        "description": "Publicity"
+                    },
+                    {
+                        "code": "mx_repair",
+                        "description": "Repairments"
+                    },
+                    {
+                        "code": "mx_secretary",
+                        "description": "Secretary"
+                    },
+                    {
+                        "code": "mx_telephony",
+                        "description": "Telephony"
+                    },
+                    {
+                        "code": "mx_drycleaner",
+                        "description": "Laundry And Dry Cleaning"
+                    }
+                ]
+            },
+            {
+                "code": "mx_shoes",
+                "description": "Shoes",
+                "subcategories": [
+                    {
+                        "code": "mx_shoes_sub",
+                        "description": "Shoe Shops"
+                    }
+                ]
+            },
+            {
+                "code": "mx_sport",
+                "description": "Sports",
+                "subcategories": [
+                    {
+                        "code": "mx_sportsaccessories",
+                        "description": "Sport Accessories"
+                    },
+                    {
+                        "code": "mx_bikes",
+                        "description": "Bikes"
+                    },
+                    {
+                        "code": "mx_sportclub",
+                        "description": "Sport Clubs"
+                    },
+                    {
+                        "code": "mx_sportcloths",
+                        "description": "Sport Clothes"
+                    }
+                ]
+            },
+            {
+                "code": "mx_tech",
+                "description": "Technology And Electronics",
+                "subcategories": [
+                    {
+                        "code": "mx_tech_sub",
+                        "description": "Electronics And Technology"
+                    }
+                ]
+            },
+            {
+                "code": "mx_travel",
+                "description": "Travel",
+                "subcategories": [
+                    {
+                        "code": "mx_airline",
+                        "description": "Airline"
+                    },
+                    {
+                        "code": "mx_travelagency",
+                        "description": "Travel Agency"
+                    },
+                    {
+                        "code": "mx_hotel",
+                        "description": "Hotels"
+                    },
+                    {
+                        "code": "mx_carrental",
+                        "description": "Car Rental"
+                    },
+                    {
+                        "code": "mx_transport",
+                        "description": "Transport"
+                    }
+                ]
+            }
+        ]
+    }
+}

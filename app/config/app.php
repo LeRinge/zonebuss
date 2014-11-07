@@ -14,6 +14,11 @@ return array(
 	*/
 
 	'debug' => true,
+	'API_ID' => "app.bbva.zonebuss",
+	'APP_KEY' => "b523ae64a6271d246d73f671fe05101f4551a130",
+	'APP_ID_BASE64'=>"Basic YXBwLmJidmEuem9uZWJ1c3M6YjUyM2FlNjRhNjI3MWQyNDZkNzNmNjcxZmUwNTEwMWY0NTUxYTEzMA==",
+	'URL_BBVA_API'=>'https://apis.bbvabancomer.com/datathon/info/merchants_categories',
+
 
 	/*
 	|--------------------------------------------------------------------------
