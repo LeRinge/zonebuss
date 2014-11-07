@@ -16,11 +16,17 @@
   	{{ HTML::style('css/grayscale.css') }}
     {{ HTML::style('//www.fuelcdn.com/fuelux/3.2.1/css/fuelux.min.css') }}
   	{{ HTML::style('font-awesome-4.2.0/css/font-awesome.min.css') }}
+
   <!-- Custom Fonts -->
-    
+   
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
+     <style type="text/css">
+        .top-buffer { margin-bottom:10px; }
+         
+     </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,7 +36,7 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -65,7 +71,7 @@
         <div class="intro-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
+                    
                     <div class="fuelux">
                         <div class="wizard" id="myWizard" data-initialize="wizard">
                             <ul class="steps">
@@ -81,50 +87,149 @@
                         
                         
                           <div class="step-content">
-                           
-                              
-                                
+                                <div class="step-pane active " data-step="1">                            
                                     <div class="container">
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../img/Icons/glyphicons_005_car.png" alt="125x125">
-                                                </a>
+                                        <div class="row top-buffer">
+                                            <div class="col-md-2 col-md-offset-1">
+                                               <button type="button" class="btn btn-default btn-lg" data-toggle="button" >
+                                                    <img src="../img/Icons/Car.png" alt="64x64">
+                                                    
+                                               </button>
+                                                
                                             </div>
-                                            <div class="col-xs-3">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../images/125x125.jpg" alt="125x125">
-                                                </a>
+                                            <div class="col-md-2">
+                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/barsandrestaurants.png" alt="64x64">
+                                                    
+                                                    </button>
+                                                    
                                             </div>
-                                            <div class="col-xs-3">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../images/125x125.jpg" alt="125x125">
-                                                </a>
+                                            <div class="col-md-2">
+                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/beauty.png" alt="64x64">
+                                                     </button>
                                             </div>
-                                            <div class="col-xs-3">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../images/125x125.jpg" alt="125x125">
-                                                </a>
+                                            <div class="col-md-2">
+                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/book.png" alt="64x64">
+                                                     </button>
                                             </div>
+                                             <div class="col-md-2">
+                                                <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/constructionmaterials.png" alt="64x64">
+                                                    
+                                                 </button>
+                                            </div>
+                                        </div>
+                                        <div class="row top-buffer">
+                                           
+                                            <div class="col-md-2 col-md-offset-1">
+                                                 <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/education.png" alt="64x64">
+                                                     </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                  <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/fashion.png" alt="64x64">
+                                                     </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/food.png" alt="64x64">
+                                                     </button>
+                                            </div>
+                                             <div class="col-md-2">
+                                               <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/health.png" alt="64x64">
+                                                     </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                  <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/hyper.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                        </div>
+                                        <div class="row top-buffer">
+                                           
+                                            <div class="col-md-2 col-md-offset-1">
+                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/jewelry.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/leisure.png" alt="64x64">
+                                                </button>
+                                            </div>
+                                             <div class="col-md-2">
+                                                <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/music.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/office.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/others.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                        </div>
+                                        <div class="row top-buffer">
+                                           
+                                            <div class="col-md-2 col-md-offset-1">
+                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/pet.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/services.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                  <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/shoes.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                 <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/sport.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                  <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/tech.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                        </div>
+                                        <div class="row top-buffer">
+                                            <div class="col-md-2 col-md-offset-1">
+                                               <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/travel.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                             <div class="col-md-2">
+                                                <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                    <img src="../img/Icons/home.png" alt="64x64">
+                                                 </button>
+                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
-                           
-                            <div class="step-pane sample-pane bg-info alert" data-step="2">
-                              <h4>Ubicacion</h4>
-                              
+                                <div class="step-pane" data-step="2">
+                                    <div id="map" style="width: 1000px; height: 400px"></div>
+                                </div>
+                                <div class="step-pane" data-step="3">
+                                </div>
                             </div>
-                            <div class="step-pane sample-pane bg-danger alert" data-step="3">
-                              <h4>Finalizar</h4>
-                              
-                            </div>
-                          </div> 
-                        <div>
-                    </div>
+                        </div> 
                     </div>
                 </div>
             </div>
-        </div>
     </header>
 
     <!-- About Section -->
@@ -150,21 +255,12 @@
     {{ HTML::script('js/bootstrap.min.js') }}
 
     <script src="//www.fuelcdn.com/fuelux/3.2.1/js/fuelux.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
     <!-- Custom Theme JavaScript -->
   
     {{ HTML::script('js/grayscale.js') }}
     {{ HTML::script('js/app.js') }}
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-             initializeFuelux();
-             fillGridCategories();
-
-
-        })
-    </script>
-
 </body>
 
 </html>
