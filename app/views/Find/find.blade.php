@@ -86,22 +86,22 @@
                                 
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-xs-1">
+                                            <div class="col-xs-3">
+                                                <a href="#" class="thumbnail">
+                                                    <img src="../img/Icons/glyphicons_005_car.png" alt="125x125">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-3">
                                                 <a href="#" class="thumbnail">
                                                     <img src="../images/125x125.jpg" alt="125x125">
                                                 </a>
                                             </div>
-                                            <div class="col-xs-1">
+                                            <div class="col-xs-3">
                                                 <a href="#" class="thumbnail">
                                                     <img src="../images/125x125.jpg" alt="125x125">
                                                 </a>
                                             </div>
-                                            <div class="col-xs-1">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../images/125x125.jpg" alt="125x125">
-                                                </a>
-                                            </div>
-                                            <div class="col-xs-1">
+                                            <div class="col-xs-3">
                                                 <a href="#" class="thumbnail">
                                                     <img src="../images/125x125.jpg" alt="125x125">
                                                 </a>
