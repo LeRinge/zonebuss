@@ -1,5 +1,5 @@
 <?php
-use GuzzleHttp\Client;
+
 class ZonebussController extends \BaseController {
 
 	/**

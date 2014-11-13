@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>Zonebuss</title>
-     <!-- Bootstrap Core CSS -->
+    <title>Zonebuss</title
+       <!-- Bootstrap Core CSS -->
 	 <!-- Custom CSS -->
   	{{ HTML::style('css/bootstrap.min.css') }}
   	{{ HTML::style('css/grayscale.css') }}
@@ -21,11 +21,14 @@
    
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+
+
 
      <style type="text/css">
         .top-buffer { margin-bottom:10px; }
-         
+          #map { position: relative;float: left;width:100%; height: 480px; }
+     
      </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -56,7 +59,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                      <!--  <a class="page-scroll" href="#about">About</a>-->
                     </li>
                     
                 </ul>
@@ -84,15 +87,13 @@
                                 <button class="btn btn-default btn-prev"><span class="glyphicon glyphicon-arrow-left"></span>Prev</button>
                                 <button class="btn btn-default btn-next" data-last="Complete">Next<span class="glyphicon glyphicon-arrow-right"></span></button>
                             </div>
-                        
-                        
                           <div class="step-content">
-                                <div class="step-pane active " data-step="1">                            
+                                <div class="step-pane active sample-pane" data-step="1">                            
                                     <div class="container">
                                         <div class="row top-buffer">
                                             <div class="col-md-2 col-md-offset-1">
                                                <button type="button" class="btn btn-default btn-lg" data-toggle="button" >
-                                                    <img src="../img/Icons/Car.png" alt="64x64">
+                                                    <img src="../img/Icons/car.png" alt="64x64">
                                                     
                                                </button>
                                                 
@@ -220,16 +221,21 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="step-pane" data-step="2">
-                                    <div id="map" style="width: 1000px; height: 400px"></div>
+                                <div class="step-pane" data-step="2" >
+                                    <div id="map"></div>
                                 </div>
                                 <div class="step-pane" data-step="3">
+                                  <div class="jumbotron">
+                                  <h1>Finalizar</h1>
+                                  <p>Estos son las configuraciones elegidas.</p>
+                                  
                                 </div>
-                            </div>
+                                </div>
+                          </div>
                         </div> 
-                    </div>
-                </div>
-            </div>
+                      </div> 
+                  </div>
+              </div>
     </header>
 
     <!-- About Section -->
@@ -255,12 +261,15 @@
     {{ HTML::script('js/bootstrap.min.js') }}
 
     <script src="//www.fuelcdn.com/fuelux/3.2.1/js/fuelux.min.js"></script>
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
 
     <!-- Custom Theme JavaScript -->
   
     {{ HTML::script('js/grayscale.js') }}
     {{ HTML::script('js/app.js') }}
+    <script>
+
+</script>
 </body>
 
 </html>
