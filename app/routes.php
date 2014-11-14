@@ -17,8 +17,17 @@ Route::get('/', function()
 });
 Route::resource("find","ZonebussController");
 
-Route::get('api/BBVA/Categories', 'APIBBVAController@Categories');
 Route::post('api/BBVA/find', 'APIBBVAController@find');
 Route::resource("api/BBVA","APIBBVAController");
+
+
+Route::post('api/Google/geocode','APIGoogleGeoController@geocode');
+Route::resource("api/Google","APIGoogleGeoController");
+
+Route::post('api/Foursquare/places', 'APIFoursquareController@places');
+Route::resource("api/Foursquare","APIFoursquareController");
+
+
+
 
 

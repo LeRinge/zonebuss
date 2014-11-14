@@ -14,14 +14,15 @@
 	 <!-- Custom CSS -->
   	{{ HTML::style('css/bootstrap.min.css') }}
   	{{ HTML::style('css/grayscale.css') }}
-    {{ HTML::style('//www.fuelcdn.com/fuelux/3.2.1/css/fuelux.min.css') }}
+    {{ HTML::style('css/fuelux.min.css') }}
   	{{ HTML::style('font-awesome-4.2.0/css/font-awesome.min.css') }}
+    {{ HTML::style('css/mapbox.css') }}
 
   <!-- Custom Fonts -->
    
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+   
 
 
 
@@ -247,25 +248,13 @@
         </div>
     </section>
 
-    
-	
-    <!-- jQuery -->
-    {{ HTML::script('js/jquery.js') }}
-
-    <!-- Bootstrap Core JavaScript -->
-    
+    {{ HTML::script('js/jquery.js') }}  
     {{ HTML::script('js/bootstrap.min.js') }}
-
-    <!-- Plugin JavaScript -->
-   
     {{ HTML::script('js/bootstrap.min.js') }}
-
-    <script src="//www.fuelcdn.com/fuelux/3.2.1/js/fuelux.min.js"></script>
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
-
-    <!-- Custom Theme JavaScript -->
-  
+    {{ HTML::script('js/fuelux.min.js') }} 
+    {{ HTML::script('js/mapbox.js') }}  
     {{ HTML::script('js/grayscale.js') }}
+    {{ HTML::script('js/ajaxq.js') }}
     {{ HTML::script('js/app.js') }}
     <script>
 
