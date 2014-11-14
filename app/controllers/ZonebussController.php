@@ -12,6 +12,7 @@ class ZonebussController extends \BaseController {
 		return View::make("Find/find");
 		//
 	}
+	
 
 	/**
 	 * Show the form for creating a new resource.

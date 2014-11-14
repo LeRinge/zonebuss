@@ -17,7 +17,22 @@ return array(
 	'API_ID' => "app.bbva.zonebuss",
 	'APP_KEY' => "b523ae64a6271d246d73f671fe05101f4551a130",
 	'APP_ID_BASE64'=>"Basic YXBwLmJidmEuem9uZWJ1c3M6YjUyM2FlNjRhNjI3MWQyNDZkNzNmNjcxZmUwNTEwMWY0NTUxYTEzMA==",
+	
 	'URL_BBVA_API'=>'https://apis.bbvabancomer.com/datathon/info/merchants_categories',
+	'URL_MERCHANTS_BBVA'=>'https://apis.bbvabancomer.com/datathon/info/merchants_categories',
+	'URL_TILES'=>'https://apis.bbvabancomer.com/datathon/info/tiles',
+
+
+
+
+	'URL_GOOGLE_GEO'=>'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
+	'API_KEY_GOOGLE_GEO'=>'AIzaSyB7nAJZO0lvHwL5JrIpnXlmqaH-vtvz2lA',
+
+	'CLIENT_ID_API_FOURSQUARE'=>'FZRGEJCAQDFNLHQ33WB0LA4FC1BKPVE0KJYVFLMDYC4IHM5W',
+	'CLIENT_SECRECT_FOURSQUARE'=>'G0EJTS0ZBNLP2O53CMRXTECRTTWJBNUVHC43D3TJI5EVAJDI',
+
+	'URL_FOURSQUARE_API'=>'https://api.foursquare.com/v2/venues/search?ll=',
+
 
 
 	/*

@@ -76,7 +76,7 @@
                 <div class="row">
                     
                     <div class="fuelux">
-                        <div class="wizard" id="myWizard" data-initialize="wizard">
+                        <div class="wizard" id="myWizard" data-initialize="wizard" data-restrict="previous">
                             <ul class="steps">
                                 <li data-step="1" class="active"><span class="badge">1</span>Tipo de negocio<span class="chevron"></span></li>
                                 <li data-step="2"><span class="badge">2</span>Ubicacion<span class="chevron"></span></li>
@@ -92,31 +92,31 @@
                                     <div class="container">
                                         <div class="row top-buffer">
                                             <div class="col-md-2 col-md-offset-1">
-                                               <button type="button" class="btn btn-default btn-lg" data-toggle="button" >
+                                               <button id="car" type="button" class="icon icon btn btn-default btn-lg" data-toggle="button" >
                                                     <img src="../img/Icons/car.png" alt="64x64">
                                                     
                                                </button>
                                                 
                                             </div>
                                             <div class="col-md-2">
-                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="barsandrestaurants" type="button" class="icon icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/barsandrestaurants.png" alt="64x64">
                                                     
                                                     </button>
                                                     
                                             </div>
                                             <div class="col-md-2">
-                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
-                                                    <img src="../img/Icons/beauty.png" alt="64x64">
+                                                   <button id="beauty" type="button" class="icon btn btn-default btn-lg"data-toggle="button">
+                                              <img src="../img/Icons/beauty.png" alt="64x64">
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="book" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/book.png" alt="64x64">
                                                      </button>
                                             </div>
                                              <div class="col-md-2">
-                                                <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                <button id="constructionmaterials" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/constructionmaterials.png" alt="64x64">
                                                     
                                                  </button>
@@ -125,27 +125,27 @@
                                         <div class="row top-buffer">
                                            
                                             <div class="col-md-2 col-md-offset-1">
-                                                 <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                 <button id="education" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/education.png" alt="64x64">
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="fashion" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/fashion.png" alt="64x64">
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="food" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/food.png" alt="64x64">
                                                      </button>
                                             </div>
                                              <div class="col-md-2">
-                                               <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                               <button id="health" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/health.png" alt="64x64">
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="hyper" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/hyper.png" alt="64x64">
                                                  </button>
                                             </div>
@@ -153,27 +153,27 @@
                                         <div class="row top-buffer">
                                            
                                             <div class="col-md-2 col-md-offset-1">
-                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="jewelry" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/jewelry.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="leisure" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/leisure.png" alt="64x64">
                                                 </button>
                                             </div>
                                              <div class="col-md-2">
-                                                <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                <button id="music" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/music.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="office" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/office.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="others" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/others.png" alt="64x64">
                                                  </button>
                                             </div>
@@ -181,39 +181,39 @@
                                         <div class="row top-buffer">
                                            
                                             <div class="col-md-2 col-md-offset-1">
-                                                   <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="pet" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/pet.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                <button id="services" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/services.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="shoes" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/shoes.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                 <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                 <button id="sport" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/sport.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="tech" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/tech.png" alt="64x64">
                                                  </button>
                                             </div>
                                         </div>
                                         <div class="row top-buffer">
                                             <div class="col-md-2 col-md-offset-1">
-                                               <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                               <button id="travel" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/travel.png" alt="64x64">
                                                  </button>
                                             </div>
                                              <div class="col-md-2">
-                                                <button type="button" class="btn btn-default btn-lg" data-toggle="button">
+                                                <button id="home" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/home.png" alt="64x64">
                                                  </button>
                                             </div>
@@ -228,7 +228,7 @@
                                   <div class="jumbotron">
                                   <h1>Finalizar</h1>
                                   <p>Estos son las configuraciones elegidas.</p>
-                                  
+
                                 </div>
                                 </div>
                           </div>

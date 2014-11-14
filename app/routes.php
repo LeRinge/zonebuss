@@ -16,7 +16,9 @@ Route::get('/', function()
 	return View::make('index');
 });
 Route::resource("find","ZonebussController");
+
 Route::get('api/BBVA/Categories', 'APIBBVAController@Categories');
+Route::post('api/BBVA/find', 'APIBBVAController@find');
 Route::resource("api/BBVA","APIBBVAController");
 
 
