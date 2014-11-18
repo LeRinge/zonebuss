@@ -23,7 +23,7 @@ class APIGoogleGeoController extends \BaseController {
 		$json = $response->json();
 		$direction=$json['results'][0]['formatted_address'];
 		Log::info($direction);
-		return $direction;
+		return Response::json(array('direccion' => $direction));
 	}
 	/**
 	 * Display a listing of the resource.

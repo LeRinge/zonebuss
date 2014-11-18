@@ -14,8 +14,7 @@
 	 <!-- Custom CSS -->
   	{{ HTML::style('css/bootstrap.min.css') }}
   	{{ HTML::style('css/grayscale.css') }}
-
-  	{{ HTML::style('font-awesome-4.2.0/css/font-awesome.min.css') }}
+    {{ HTML::style('font-awesome-4.2.0/css/font-awesome.min.css') }}
   <!-- Custom Fonts -->
     
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -67,9 +66,39 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Zonebuss</h1>
-                        <p class="intro-text">Herramienta para encontrar el mejor lugar para tu negocio.
-                        <a class="btn btn-primary btn- btn-block" href="{{ URL::to('find'); }}">Comenzar ahora!</a> 
-                    </div>
+                           
+                            <div id="carousel" class="carousel slide" data-ride="carousel" data-, data-interval="2400">
+                                  <!-- Indicators -->
+                                  <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                  </ol>
+
+                                  <!-- Wrapper for slides -->
+                                  <div class="carousel-inner" role="listbox">
+                        
+                                    <div class="item active">
+                                      <img src="../img/map2.png" >
+                                      <div class="carousel-caption">
+                                      </div>
+                                    </div>
+
+                                    <div class="item">
+                                      <img src="../img/commerce2.png" >
+                                      <div class="carousel-caption">
+                                      </div>
+                                    </div>
+                                
+                                  </div>
+
+                            </div>   
+                             <div class="row">
+                             </div>
+                            <div class="row">
+                                <a class="btn btn-default" href="{{ URL::to('find'); }}">Comenzar ahora!</a> 
+
+                            </div>                   
+                       </div>
                 </div>
             </div>
         </div>

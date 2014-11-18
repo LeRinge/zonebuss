@@ -2,14 +2,11 @@ var map;
 var locatization;
 var marker;
 var category;
-var myApp;
-var mapCompetencia;
 
  $(document).ready(function(){
              initializeFuelux();
              initializeButtons();  
-
-
+             
              $('#myWizard').on('actionclicked.fu.wizard', function (evt, data) {
   					if(data.step===1 && data.direction==='next') {
                         initializeMapBox();
@@ -22,34 +19,6 @@ var mapCompetencia;
               });
 
          })
-
-myApp = myApp || (function () {
-    var pleaseWaitDiv = $('#pleaseWaitDialog');
-    return {
-        showPleaseWait: function() {
-            pleaseWaitDiv.modal();
-        },
-        hidePleaseWait: function () {
-            pleaseWaitDiv.modal('hide');
-        },
-
-    };
-})();
-
-function showInfoPlace(direccion){
-
-        $('#direccion').text(direccion);
-
-}
-
-function showInfoBBVA(){
-
-
-}
-function showInfoMap(){
-
-  initializeMapCompetencia();
-}
 function SendInfoSetup(){
         var category = $('.icon.active').attr('id');
         var lat_lng=locatization.lat+','+locatization.lng; 
@@ -67,7 +36,7 @@ function SendInfoSetup(){
                 type:'post',
                 data:data,
                 success:function(json){
-                    showInfoPlace(json['direccion']);
+                    console.log('Response'+json);
                 }
             });
         $.ajaxq("QueueAPIS",{
@@ -77,31 +46,25 @@ function SendInfoSetup(){
                 type:'post',
                 data:data,
                 success:function(json){
-                   showInfoMap();
+                    console.log('Response'+json);
                 }
             });
         $.ajaxq("QueueAPIS",{
                 url: 'api/BBVA/find',
-                dataType:'json',               
+                dataType:'json',
+                
                 type:'post',
                 data:data,
                 success:function(json){
-                   
-                     $('#myModal').modal('hide');
-                     $('.intro').hide(); 
-                     $('#charts').show();
-                     showInfoBBVA();
+                    console.log('Response'+json);
                 }
             });
-     $('#myModal').modal('show');
-     
-        
 }
 function initializeButtons(){
 
     $(".icon").on('click',function(){
             $('.icon.active').removeClass().addClass("icon btn btn-default btn-lg");
-            $(this).removeClass().addClass('icon btn btn-primary btn-lg active');
+            $(this).removeClass().addClass('icon icon btn btn-primary btn-lg active');
     });
 
 }
@@ -119,25 +82,10 @@ function fillGridCategories(){
 function initializeFuelux(){
 	   $('#myWizard').wizard();
 }
-function initializeMapCompetencia(){
-
-                        L.mapbox.accessToken = 'pk.eyJ1IjoibHUxenp6IiwiYSI6Imp0RnFuRm8ifQ.7oDrxlos9T1R3_RqKHyshQ';
-                        mapC = L.mapbox.map('mapC','examples.map-i86nkdio').setView([19.41, -99.14], 9);
-                        mapC.zoom=12;    
-                        marker = L.marker([19.41, -99.14], {
-                                            icon: L.mapbox.marker.icon({'marker-color': 'ff8888'}),
-                                            draggable: true
-                        });                  
-                        marker.on('dragend', ondragend);
-                        marker.addTo(mapC);
-                        ondragend();
-                        setTimeout(function(){ mapC.invalidateSize()}, 1500);
-
-}
 function initializeMapBox(){
                         L.mapbox.accessToken = 'pk.eyJ1IjoibHUxenp6IiwiYSI6Imp0RnFuRm8ifQ.7oDrxlos9T1R3_RqKHyshQ';
                         map = L.mapbox.map('map','examples.map-i86nkdio').setView([19.41, -99.14], 9);
-                        map.zoom=12;                      
+                        map.zoom=15;                      
                         marker = L.marker([19.41, -99.14], {
                                             icon: L.mapbox.marker.icon({'marker-color': 'ff8888'}),
                                             draggable: true

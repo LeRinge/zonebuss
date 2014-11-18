@@ -28,8 +28,8 @@
 
      <style type="text/css">
         .top-buffer { margin-bottom:10px; }
-          #map { position: relative;float: left;width:100%; height: 480px; }
-     
+          .map { position: relative;float: left;width:100%; height: 480px; }
+          .centered img { display: inline; }
      </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,7 +40,30 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="fuelux" >
+   
+    
+
+  
+     <div id="myModal" class="modal fade" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                    <div class="row">
+                      
+                        <div class="col-md-4">
+                          <img src="../img/ajax-loader.gif" id="loading-indicator" />
+                        </div>
+                        <div class="col-md-8">
+                           <h3 style="color:#000"> Generating resume...</h3>
+                         </div>
+
+                      
+                    </div> 
+                 </div>
+                 
+              </div>
+            </div>
+      </div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -76,7 +99,7 @@
             <div class="container">
                 <div class="row">
                     
-                    <div class="fuelux">
+                  
                         <div class="wizard" id="myWizard" data-initialize="wizard" data-restrict="previous">
                             <ul class="steps">
                                 <li data-step="1" class="active"><span class="badge">1</span>Tipo de negocio<span class="chevron"></span></li>
@@ -223,7 +246,7 @@
                                     </div>
                                 </div>
                                 <div class="step-pane" data-step="2" >
-                                    <div id="map"></div>
+                                    <div id="map" class="map"></div>
                                 </div>
                                 <div class="step-pane" data-step="3">
                                   <div class="jumbotron">
@@ -234,10 +257,25 @@
                                 </div>
                           </div>
                         </div> 
-                      </div> 
-                  </div>
-              </div>
+                      
+                </div>
+
+            </div>
     </header>
+   
+
+    <section id="charts" class="chartBack container content-section text-center" style="display:none">
+        <div class="row">
+             <h3><span id="direccion" class="label label-info"></span></h3>
+        </div>
+
+        <div class="row">
+            <div class="map" id="mapC" ></div>
+        </div>
+
+    </section>
+
+         
 
     <!-- About Section -->
     <section id="about" class="container content-section text-center">
@@ -249,7 +287,6 @@
     </section>
 
     {{ HTML::script('js/jquery.js') }}  
-    {{ HTML::script('js/bootstrap.min.js') }}
     {{ HTML::script('js/bootstrap.min.js') }}
     {{ HTML::script('js/fuelux.min.js') }} 
     {{ HTML::script('js/mapbox.js') }}  
