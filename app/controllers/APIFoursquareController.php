@@ -24,7 +24,7 @@ class APIFoursquareController extends \BaseController {
 		$request = $clientFoursquare->createRequest('GET',$URL);
 		$response = $clientFoursquare->send($request);
 		$json = $response->json();
-		Log::info($json);
+		
 
 		return $json;
 

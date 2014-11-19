@@ -4,6 +4,7 @@ var marker;
 var category;
 var myApp;
 var mapCompetencia;
+var markers;
 
  $(document).ready(function(){
              initializeFuelux();
@@ -46,9 +47,24 @@ function showInfoBBVA(){
 
 
 }
-function showInfoMap(){
+function showInfoMap(json){
 
-  initializeMapCompetencia();
+                        initializeMapCompetencia();
+                        $.each(json,function(index){
+                                drawMarker(json[index].name,json[index].lat,json[index].ln,'mapC');
+                        });
+                        
+
+}
+function drawMarker(name,lat,ln,map){
+                        marker = L.marker([lat, ln], {
+                                            icon: L.mapbox.marker.icon({'marker-color': 'ff8888'}),
+                                            draggable: true
+                        });                  
+                        marker.on('dragend', ondragend);
+                        marker.bindPopup(name);
+                        marker.addTo(mapC);
+                        ondragend();
 }
 function SendInfoSetup(){
         var category = $('.icon.active').attr('id');
@@ -59,7 +75,7 @@ function SendInfoSetup(){
                 lng:locatization.lng,
                 lat_lng:  lat_lng       
         }
-        $.get( "api/BBVA/TestRedis", function( data ) {});
+        $.get( "api/BBVA/TestRedisLocal", function( data ) {});
 
         //Trow 3 API Routes
         $.ajaxq("QueueAPIS",{
@@ -79,7 +95,7 @@ function SendInfoSetup(){
                 type:'post',
                 data:data,
                 success:function(json){
-                   showInfoMap();
+                   showInfoMap(json);
                 }
             });
         $.ajaxq("QueueAPIS",{
@@ -101,7 +117,7 @@ function SendInfoSetup(){
 }
 function initializeButtons(){
 
-    $(".icon").on('click',function(){
+    $(".icon.btn").on('click',function(){
             $('.icon.active').removeClass().addClass("icon btn btn-default btn-lg");
             $(this).removeClass().addClass('icon btn btn-primary btn-lg active');
     });
@@ -125,14 +141,10 @@ function initializeMapCompetencia(){
 
                         L.mapbox.accessToken = 'pk.eyJ1IjoibHUxenp6IiwiYSI6Imp0RnFuRm8ifQ.7oDrxlos9T1R3_RqKHyshQ';
                         mapC = L.mapbox.map('mapC','examples.map-i86nkdio').setView([19.41, -99.14], 15);
-                        mapC.zoom=15;    
-                        marker = L.marker([19.41, -99.14], {
-                                            icon: L.mapbox.marker.icon({'marker-color': 'ff8888'}),
-                                            draggable: true
-                        });                  
-                        marker.on('dragend', ondragend);
-                        marker.addTo(mapC);
-                        ondragend();
+                        mapC.zoom=15; 
+                        mapC.featureLayer.on('click', function(e) {
+                             mapC.panTo(e.layer.getLatLng());
+                    });   
                         setTimeout(function(){ mapC.invalidateSize()}, 1500);
 
 }

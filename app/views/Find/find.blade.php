@@ -117,31 +117,31 @@
                                     <div class="container">
                                         <div class="row top-buffer">
                                             <div class="col-md-2 col-md-offset-1">
-                                               <button id="car" type="button" class="icon icon btn btn-default btn-lg" data-toggle="button" >
+                                               <button id="mx_auto" type="button" class="icon btn btn-default btn-lg" data-toggle="button" >
                                                     <img src="../img/Icons/car.png" alt="64x64">
                                                     
                                                </button>
                                                 
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="barsandrestaurants" type="button" class="icon icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_barsandrestaurants" type="button" class="icon  btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/barsandrestaurants.png" alt="64x64">
                                                     
                                                     </button>
                                                     
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="beauty" type="button" class="icon btn btn-default btn-lg"data-toggle="button">
+                                                   <button id="mx_beauty" type="button" class="icon btn btn-default btn-lg"data-toggle="button">
                                               <img src="../img/Icons/beauty.png" alt="64x64">
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="book" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_book" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/book.png" alt="64x64">
                                                      </button>
                                             </div>
                                              <div class="col-md-2">
-                                                <button id="constructionmaterials" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                <button id="mx_constructionmaterials" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/constructionmaterials.png" alt="64x64">
                                                     
                                                  </button>
@@ -150,7 +150,7 @@
                                         <div class="row top-buffer">
                                            
                                             <div class="col-md-2 col-md-offset-1">
-                                                 <button id="education" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                 <button id="mx_education" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/education.png" alt="64x64">
                                                      </button>
                                             </div>
@@ -160,17 +160,17 @@
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="food" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_food" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/food.png" alt="64x64">
                                                      </button>
                                             </div>
                                              <div class="col-md-2">
-                                               <button id="health" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                               <button id="mx_health" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/health.png" alt="64x64">
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button id="hyper" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="mx_hyper" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/hyper.png" alt="64x64">
                                                  </button>
                                             </div>
@@ -178,27 +178,27 @@
                                         <div class="row top-buffer">
                                            
                                             <div class="col-md-2 col-md-offset-1">
-                                                   <button id="jewelry" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_jewelry" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/jewelry.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="leisure" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_leisure" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/leisure.png" alt="64x64">
                                                 </button>
                                             </div>
                                              <div class="col-md-2">
-                                                <button id="music" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                <button id="mx_music" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/music.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="office" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_office" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/office.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="others" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_others" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/others.png" alt="64x64">
                                                  </button>
                                             </div>
@@ -206,39 +206,39 @@
                                         <div class="row top-buffer">
                                            
                                             <div class="col-md-2 col-md-offset-1">
-                                                   <button id="pet" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_pet" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/pet.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                <button id="services" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                <button id="mx_services" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/services.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button id="shoes" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="mx_shoes" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/shoes.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                 <button id="sport" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                 <button id="mx_sport" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/sport.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button id="tech" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="mx_tech" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/tech.png" alt="64x64">
                                                  </button>
                                             </div>
                                         </div>
                                         <div class="row top-buffer">
                                             <div class="col-md-2 col-md-offset-1">
-                                               <button id="travel" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                               <button id="mx_travel" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/travel.png" alt="64x64">
                                                  </button>
                                             </div>
                                              <div class="col-md-2">
-                                                <button id="home" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                <button id="mx_home" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/home.png" alt="64x64">
                                                  </button>
                                             </div>

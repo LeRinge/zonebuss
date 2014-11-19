@@ -21,11 +21,9 @@ class APIBBVAController extends \BaseController {
 
 	}
 	public function TestRedisLocal(){
-		$SET=RedisConector::GetCodes();
-		$redis = new Predis\Client();
-		$redis->set('foo1', 'barLuis');
-		$value = $redis->get('foo1');
-		return $value.$SET;
+		
+		$SET=RedisConector::GetCodes('mx_car');
+		return $SET;
 	}
 	public function TestRedis(){
 		$redis = new Predis\Client(array(
@@ -67,7 +65,6 @@ class APIBBVAController extends \BaseController {
 		$request-> setHeader("Authorization",$APP_ID_BASE64);
 		$response = $clientBBVA->send($request);
 		$json = $response->json();
-		Log::info($json);
 
 		return $json;
 

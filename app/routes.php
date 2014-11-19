@@ -17,7 +17,7 @@ Route::get('/', function()
 });
 Route::resource("find","ZonebussController");
 
-Route::get('api/BBVA/TestRedis', 'APIBBVAController@TestRedis');
+Route::get('api/BBVA/TestRedisLocal', 'APIBBVAController@TestRedisLocal');
 Route::post('api/BBVA/find', 'APIBBVAController@find');
 Route::resource("api/BBVA","APIBBVAController");
 
