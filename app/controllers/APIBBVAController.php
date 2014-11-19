@@ -5,7 +5,7 @@ use GuzzleHttp\Exception\ClientException;
 class APIBBVAController extends \BaseController {
 
 	public function Categories(){
-
+		
 		$client = new Client();
 		$url = Config::get('app.URL_BBVA_API');
 		$API_ID = Config::get('app.API_ID');
@@ -21,10 +21,11 @@ class APIBBVAController extends \BaseController {
 
 	}
 	public function TestRedisLocal(){
+		$SET=RedisConector::GetCodes();
 		$redis = new Predis\Client();
 		$redis->set('foo1', 'barLuis');
 		$value = $redis->get('foo1');
-		return $value;
+		return $value.$SET;
 	}
 	public function TestRedis(){
 		$redis = new Predis\Client(array(
@@ -32,8 +33,8 @@ class APIBBVAController extends \BaseController {
 		    'port' => parse_url($_ENV['REDISCLOUD_URL'], PHP_URL_PORT),
 		    'password' => parse_url($_ENV['REDISCLOUD_URL'], PHP_URL_PASS),
 		));
-		$redis->set('foo1', 'barLuis');
-		$value = $redis->get('foo1');
+		$redis->set('foo', 'bar');
+		$value = $redis->get('foo');
 		return $value;
 	}
 	/**

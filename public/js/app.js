@@ -60,14 +60,6 @@ function SendInfoSetup(){
                 lat_lng:  lat_lng       
         }
         $.get( "api/BBVA/TestRedis", function( data ) {});
-        $.ajax({
-                url: 'api/BBVA/TestRedis',
-                dataType:'json',
-                type:'GET',
-                success:function(json){
-                    showInfoPlace(json['direccion']);
-                }
-            });
 
         //Trow 3 API Routes
         $.ajaxq("QueueAPIS",{
