@@ -20,7 +20,16 @@ class APIBBVAController extends \BaseController {
 		return $categories;
 
 	}
-
+	public function TestRedis(){
+		$redis = new Predis\Client(array(
+		    'host' => parse_url($_ENV['REDISCLOUD_URL'], 'pub-redis-12803.us-east-1-2.5.ec2.garantiadata.com'),
+		    'port' => parse_url($_ENV['REDISCLOUD_URL'], '12803'),
+		    'password' => parse_url($_ENV['REDISCLOUD_URL'], 'r94QVnlXb4ZL5okb'),
+		));
+		$redis->set('foo1', 'barLuis');
+		$value = $redis->get('foo1');
+		return $value;
+	}
 	/**
 	 * Display a listing of the resource.
 	 *

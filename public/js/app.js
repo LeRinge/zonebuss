@@ -8,8 +8,8 @@ var mapCompetencia;
  $(document).ready(function(){
              initializeFuelux();
              initializeButtons();  
-
-
+            
+           
              $('#myWizard').on('actionclicked.fu.wizard', function (evt, data) {
   					if(data.step===1 && data.direction==='next') {
                         initializeMapBox();
@@ -59,6 +59,16 @@ function SendInfoSetup(){
                 lng:locatization.lng,
                 lat_lng:  lat_lng       
         }
+        $.get( "api/BBVA/TestRedis", function( data ) {});
+        $.ajax({
+                url: 'api/BBVA/TestRedis',
+                dataType:'json',
+                type:'GET',
+                success:function(json){
+                    showInfoPlace(json['direccion']);
+                }
+            });
+
         //Trow 3 API Routes
         $.ajaxq("QueueAPIS",{
                 url: 'api/Google/geocode',
