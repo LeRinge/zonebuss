@@ -34,6 +34,10 @@ return array(
 	'URL_FOURSQUARE_API'=>'https://api.foursquare.com/v2/venues/search?ll=',
 
 
+	'API_KEY_FACTUAL'=>'XNvygYbb7WZuLf6JLdeJ1dXtiCGQJHW2qc8IJ0En',
+	'URL_API_FACTUAL'=>'http://api.v3.factual.com/t/places-mx',
+
+
 
 	/*
 	|--------------------------------------------------------------------------

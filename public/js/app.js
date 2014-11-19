@@ -71,7 +71,7 @@ function SendInfoSetup(){
                 }
             });
         $.ajaxq("QueueAPIS",{
-                url: 'api/Foursquare/places',
+                url: 'api/Factual/places',
                 dataType:'json',
                 
                 type:'post',
@@ -122,8 +122,8 @@ function initializeFuelux(){
 function initializeMapCompetencia(){
 
                         L.mapbox.accessToken = 'pk.eyJ1IjoibHUxenp6IiwiYSI6Imp0RnFuRm8ifQ.7oDrxlos9T1R3_RqKHyshQ';
-                        mapC = L.mapbox.map('mapC','examples.map-i86nkdio').setView([19.41, -99.14], 9);
-                        mapC.zoom=12;    
+                        mapC = L.mapbox.map('mapC','examples.map-i86nkdio').setView([19.41, -99.14], 15);
+                        mapC.zoom=15;    
                         marker = L.marker([19.41, -99.14], {
                                             icon: L.mapbox.marker.icon({'marker-color': 'ff8888'}),
                                             draggable: true
@@ -136,8 +136,8 @@ function initializeMapCompetencia(){
 }
 function initializeMapBox(){
                         L.mapbox.accessToken = 'pk.eyJ1IjoibHUxenp6IiwiYSI6Imp0RnFuRm8ifQ.7oDrxlos9T1R3_RqKHyshQ';
-                        map = L.mapbox.map('map','examples.map-i86nkdio').setView([19.41, -99.14], 9);
-                        map.zoom=12;                      
+                        map = L.mapbox.map('map','examples.map-i86nkdio').setView([19.41, -99.14], 15);
+                        map.zoom=15;                      
                         marker = L.marker([19.41, -99.14], {
                                             icon: L.mapbox.marker.icon({'marker-color': 'ff8888'}),
                                             draggable: true

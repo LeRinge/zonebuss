@@ -27,6 +27,8 @@ Route::resource("api/Google","APIGoogleGeoController");
 Route::post('api/Foursquare/places', 'APIFoursquareController@places');
 Route::resource("api/Foursquare","APIFoursquareController");
 
+Route::post('api/Factual/places', 'APIFactualController@places');
+Route::resource("api/Factual","APIFactualController");
 
 
 

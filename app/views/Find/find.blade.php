@@ -29,6 +29,7 @@
      <style type="text/css">
         .top-buffer { margin-bottom:10px; }
           .map { position: relative;float: left;width:100%; height: 480px; }
+          .mapC { position: relative;float: left;width:100%; height: 240px; }
           .centered img { display: inline; }
      </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -264,13 +265,16 @@
     </header>
    
 
-    <section id="charts" class="chartBack container content-section text-center" style="display:none">
+    <section id="charts" class="chartBack" style="display:none">
         <div class="row">
              <h3><span id="direccion" class="label label-info"></span></h3>
         </div>
 
         <div class="row">
-            <div class="map" id="mapC" ></div>
+
+            <div  class="col-md-8 col-md-offset-2">
+                <div class="mapC" id="mapC" ></div>
+            </div>
         </div>
 
     </section>

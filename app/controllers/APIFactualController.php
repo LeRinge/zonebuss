@@ -1,7 +1,7 @@
 <?php
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-class APIFoursquareController extends \BaseController {
+class APIFactualController extends \BaseController {
 
 
 
@@ -16,13 +16,18 @@ class APIFoursquareController extends \BaseController {
 
 
 		//venues/search?ll=19.419444, -99.145556&radius=450
-		$clientFoursquare = new Client();
-		$CLIENT_ID_API_FOURSQUARE = Config::get('app.CLIENT_ID_API_FOURSQUARE');
-		$CLIENT_SECRECT_FOURSQUARE = Config::get('app.CLIENT_SECRECT_FOURSQUARE');
-		$URL_FOURSQUARE_API =Config::get('app.URL_FOURSQUARE_API');
-		$URL=$URL_FOURSQUARE_API . (string)$data['lat'] . ',' . (string)$data['lng'] . '&query='. 'pet mascota' .'&radius=800&limit=20&day=any' .'&client_id=' . $CLIENT_ID_API_FOURSQUARE . '&client_secret=' . $CLIENT_SECRECT_FOURSQUARE . '&v=20141118';
-		$request = $clientFoursquare->createRequest('GET',$URL);
-		$response = $clientFoursquare->send($request);
+		$clientFactual = new Client();
+		$API_KEY_FACTUAL = Config::get('app.API_KEY_FACTUAL');
+		$URL_API_FACTUAL = Config::get('app.URL_API_FACTUAL');
+		//filters={"category_ids":{"$includes_any":[169]}}&geo={"$circle":{"$center":[19.413528, -99.166771],"$meters":1550}}&KEY=XNvygYbb7WZuLf6JLdeJ1dXtiCGQJHW2qc8IJ0En
+		$URL = $URL_API_FACTUAL;
+		$request = $clientFactual->createRequest('GET',$URL);
+		$query = $request->getQuery();
+		$query->set('filters', '{"category_ids":{"$includes_any":[2]}}');
+		$query->set('geo','{"$circle":{"$center":['.(string)$data['lat'].','.(string)$data['lng'].'],"$meters":550}}');
+		$query->set('KEY',$API_KEY_FACTUAL);
+		Log::info($request);
+		$response = $clientFactual->send($request);
 		$json = $response->json();
 		Log::info($json);
 
