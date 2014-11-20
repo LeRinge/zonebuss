@@ -32,7 +32,11 @@ class APIFactualController extends \BaseController {
 		
 		$dataArray=$json['response']['data'];
 		$places=array();
-
+		array_push($places, array(
+				'name'=>'Your Place',
+				'lat'=>$data['lat'],
+				'ln'=>$data['lng']
+			));
 		foreach ($dataArray as $key) {
 			array_push($places, array(
 				'name'=>$key['name'],

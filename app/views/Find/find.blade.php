@@ -29,7 +29,7 @@
      <style type="text/css">
         .top-buffer { margin-bottom:10px; }
           .map { position: relative;float: left;width:100%; height: 480px; }
-          .mapC { position: relative;float: left;width:100%; height: 240px; }
+          .mapC { position: relative;float: left;width:100%; height: 360px; }
           .centered img { display: inline; }
      </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -117,14 +117,14 @@
                                     <div class="container">
                                         <div class="row top-buffer">
                                             <div class="col-md-2 col-md-offset-1">
-                                               <button id="mx_auto" type="button" class="icon btn btn-default btn-lg" data-toggle="button" >
+                                               <button id="mx_auto" autocomplete="off" type="button" class="icon btn btn-default btn-lg" data-toggle="button" aria-pressed="false" >
                                                     <img src="../img/Icons/car.png" alt="64x64">
                                                     
                                                </button>
                                                 
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="mx_barsandrestaurants" type="button" class="icon  btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_barsandrestaurants" autocomplete="off" type="button" class="icon  btn btn-default btn-lg" data-toggle="button" aria-pressed="false">
                                                     <img src="../img/Icons/barsandrestaurants.png" alt="64x64">
                                                     
                                                     </button>
@@ -155,7 +155,7 @@
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button id="fashion" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="mx_fashion" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
                                                     <img src="../img/Icons/fashion.png" alt="64x64">
                                                      </button>
                                             </div>
@@ -272,7 +272,7 @@
 
         <div class="row">
 
-            <div  class="col-md-8 col-md-offset-2">
+            <div  class="col-md-6 col-md-offset-3">
                 <div class="mapC" id="mapC" ></div>
             </div>
         </div>

@@ -56,12 +56,17 @@ class APIBBVAController extends \BaseController {
 		
 		$clientBBVA = new Client();
 		$url = Config::get('app.URL_BBVA_API');
-		$url = 'https://apis.bbvabancomer.com/datathon/tiles/'. (string)$data['lat'] . '/' . (string)$data['lng'] . '/basic_stats?category=mx_food&date_min=20131101&date_max=20140430&group_by=month';
-		Log::info($url);
+		$url = 'https://apis.bbvabancomer.com/datathon/tiles/'. (string)$data['lat'] . '/' . (string)$data['lng'] . '/basic_stats';
+		$request = $clientBBVA->createRequest('GET', $url);
+		$query = $request->getQuery();
+		$query->set('category',$data['category']);
+		$query->set('date_min','20131101');
+		$query->set('date_max','20140430');
+		$query->set('group_by','month');
 		$API_ID = Config::get('app.API_ID');
 		$APP_KEY = Config::get('app.APP_KEY');
 		$APP_ID_BASE64 =Config::get('app.APP_ID_BASE64');
-		$request = $clientBBVA->createRequest('GET', $url);
+		
 		$request-> setHeader("Authorization",$APP_ID_BASE64);
 		$response = $clientBBVA->send($request);
 		$json = $response->json();

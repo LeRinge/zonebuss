@@ -37,9 +37,10 @@ myApp = myApp || (function () {
     };
 })();
 
-function showInfoPlace(direccion){
+function showInfoPlace(json){
 
-        $('#direccion').text(direccion);
+        $('#direccion').text(json['direccion']);
+                      
 
 }
 
@@ -50,21 +51,29 @@ function showInfoBBVA(){
 function showInfoMap(json){
 
                         initializeMapCompetencia();
+                        mapC.setView(new L.LatLng(json[0].lat,json[0].ln), 15);
+                        setTimeout(function(){ mapC.invalidateSize()}, 1500);
                         $.each(json,function(index){
-                                drawMarker(json[index].name,json[index].lat,json[index].ln,'mapC');
+                                if(index==0){
+                                    drawMarker(json[index].name,json[index].lat,json[index].ln,'mapC','CC22FF');
+                                }
+                                else{
+                                    drawMarker(json[index].name,json[index].lat,json[index].ln,'mapC','ff1111');
+                                }
                         });
                         
 
 }
-function drawMarker(name,lat,ln,map){
+function drawMarker(name,lat,ln,map,color){
+
                         marker = L.marker([lat, ln], {
-                                            icon: L.mapbox.marker.icon({'marker-color': 'ff8888'}),
-                                            draggable: true
+                                            icon: L.mapbox.marker.icon(
+                                                {'marker-color': color}
+
+                                                )
                         });                  
-                        marker.on('dragend', ondragend);
                         marker.bindPopup(name);
                         marker.addTo(mapC);
-                        ondragend();
 }
 function SendInfoSetup(){
         var category = $('.icon.active').attr('id');
@@ -85,7 +94,7 @@ function SendInfoSetup(){
                 type:'post',
                 data:data,
                 success:function(json){
-                    showInfoPlace(json['direccion']);
+                    showInfoPlace(json);
                 }
             });
         $.ajaxq("QueueAPIS",{
@@ -118,8 +127,9 @@ function SendInfoSetup(){
 function initializeButtons(){
 
     $(".icon.btn").on('click',function(){
-            $('.icon.active').removeClass().addClass("icon btn btn-default btn-lg");
-            $(this).removeClass().addClass('icon btn btn-primary btn-lg active');
+            $('.icon.active').removeClass().addClass('icon btn btn-default btn-lg');
+            $(this).removeClass();
+            $(this).addClass('icon btn btn-primary btn-lg');
     });
 
 }
@@ -140,12 +150,11 @@ function initializeFuelux(){
 function initializeMapCompetencia(){
 
                         L.mapbox.accessToken = 'pk.eyJ1IjoibHUxenp6IiwiYSI6Imp0RnFuRm8ifQ.7oDrxlos9T1R3_RqKHyshQ';
-                        mapC = L.mapbox.map('mapC','examples.map-i86nkdio').setView([19.41, -99.14], 15);
-                        mapC.zoom=15; 
+                        mapC = L.mapbox.map('mapC','examples.map-i86nkdio');
                         mapC.featureLayer.on('click', function(e) {
                              mapC.panTo(e.layer.getLatLng());
-                    });   
-                        setTimeout(function(){ mapC.invalidateSize()}, 1500);
+                        });   
+                        
 
 }
 function initializeMapBox(){
