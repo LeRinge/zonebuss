@@ -5,15 +5,14 @@ use GuzzleHttp\Exception\ClientException;
 class RedisConector {
     public static function GetCodes($category) {
        
-       /*$redis = new Predis\Client(array(
+       $redis = new Predis\Client(array(
 		    'host' => parse_url($_ENV['REDISCLOUD_URL'], PHP_URL_HOST),
 		    'port' => parse_url($_ENV['REDISCLOUD_URL'], PHP_URL_PORT),
 		    'password' => parse_url($_ENV['REDISCLOUD_URL'], PHP_URL_PASS),
-		));*/
-        $redis = new Predis\Client();
+		));
+        //$redis = new Predis\Client();
        	$codes =$redis->smembers($category);
-       	Log::info($codes);
-		return implode(',',$codes);
+		return $codes;
     }
      public static function SetCodes() {
         
@@ -53,12 +52,12 @@ class RedisConector {
 							"mx_tech" => array ('460'),
 							"mx_fashion" => array ('142')
                           );
-		/*$redis = new Predis\Client(array(
+		$redis = new Predis\Client(array(
 		    'host' => parse_url($_ENV['REDISCLOUD_URL'], PHP_URL_HOST),
 		    'port' => parse_url($_ENV['REDISCLOUD_URL'], PHP_URL_PORT),
 		    'password' => parse_url($_ENV['REDISCLOUD_URL'], PHP_URL_PASS),
-		));*/
-		$redis = new Predis\Client();
+		));
+		//$redis = new Predis\Client();
 		$redis->flushall();			
 		foreach ($codesArray as $key => $value) {
 			

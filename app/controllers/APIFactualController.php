@@ -1,51 +1,40 @@
 <?php
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+
 class APIFactualController extends \BaseController {
-
-
-
 	public function places(){
-
+		
 		$data=array(
 			'category' =>Input::get('category'),
 			'lat'=> Input::get('lat'),
 			'lng'=> Input::get('lng'),
 			'lat_lng' => Input::get('lat_lng')
 			);
-		$clientFactual = new Client();
-		$API_KEY_FACTUAL = Config::get('app.API_KEY_FACTUAL');
-		$URL_API_FACTUAL = Config::get('app.URL_API_FACTUAL');
-		$URL = $URL_API_FACTUAL;
-
-		$request = $clientFactual->createRequest('GET',$URL);
 		RedisConector::SetCodes();
 		$codes=RedisConector::GetCodes($data['category']);
-		Log::info('codes from API'.$codes);
-		$query = $request->getQuery();
-		$query->set('filters', '{"category_ids":{"$includes_any":['. $codes .']}}');
-		$query->set('geo','{"$circle":{"$center":['.(string)$data['lat'].','.(string)$data['lng'].'],"$meters":550}}');
-		$query->set('KEY',$API_KEY_FACTUAL);
-		$response = $clientFactual->send($request);
-		$json = $response->json();
 
+	    $OAUTH_KEY_FACTUAL = Config::get('app.OAUTH_KEY_FACTUAL');
+	    $OAUTH_SECRECT_FACTUAL = Config::get('app.OAUTH_SECRECT_FACTUAL');
 		
-		$dataArray=$json['response']['data'];
-		$places=array();
-		array_push($places, array(
-				'name'=>'Your Place',
-				'lat'=>$data['lat'],
-				'ln'=>$data['lng']
-			));
-		foreach ($dataArray as $key) {
-			array_push($places, array(
-				'name'=>$key['name'],
-				'lat'=>$key['latitude'],
-				'ln'=>$key['longitude']
-			));
-		}
-
-		return json_encode($places);
+		$factual = new Factual($OAUTH_KEY_FACTUAL,$OAUTH_SECRECT_FACTUAL);
+		$query = new FactualQuery;
+    	$query->limit(20);
+    	$query->only("name,latitude,longitude");
+    	$query->within(new FactualCircle($data['lat'],$data['lng'], 550));
+    	$query->field("category_ids")->includesAny(array_values($codes));
+    	
+    	$res = $factual->fetch("places", $query);
+    	
+    	$resJson = $res->getDataAsJSON();
+    	$resJsonArray=array();
+    	array_push($resJsonArray,array('latitude' => $data['lat'],
+    									'longitude' => $data['lng'],
+    									'name' => 'Your place',
+    									'$distance' => 0
+    									));
+    	$dataFinal=array_merge($resJsonArray,json_decode($resJson));
+		return json_encode($dataFinal);
 
 
 	}

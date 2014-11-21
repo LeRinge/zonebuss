@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"guzzlehttp/guzzle": "~5.0",
-		"predis/predis": "0.8.*@dev"
+		"predis/predis": "0.8.*@dev",
+		"factual/factual-php-driver": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

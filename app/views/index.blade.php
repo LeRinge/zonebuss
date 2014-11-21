@@ -27,6 +27,8 @@
         .carousel-inner {
             margin-bottom:50px;
         }
+        
+        .carousel-inner > .item > img { margin: 0 auto; }
     </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -88,20 +90,20 @@
                         
                                     <div class="item active">
                                       <img src="../img/map2.png" >
-                                      <div class="carousel-caption caption-top-righ">
+                                      <div class="carousel-caption caption-bottom-right">
                                         <span class="textcarosel">Encuentra una zona</span>
                                       </div>
                                     </div>
 
                                     <div class="item">
                                       <img src="../img/commerce2.png" >
-                                      <div class="carousel-caption caption-top-righ">
+                                      <div class="carousel-caption caption-bottom-right">
                                         <span class="textcarosel">Elige una categoria</span>
                                       </div>
                                     </div>
                                       <div class="item">
                                       <img src="../img/chart.png" >
-                                     <div class="carousel-caption caption-top-righ">
+                                     <div class="carousel-caption caption-bottom-right">
                                         <span class="textcarosel">Compara con otras zonas</span>
                                       </div>
                                     </div>

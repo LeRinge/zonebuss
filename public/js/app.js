@@ -13,6 +13,8 @@ var salesChartweek;
 var salesChartweekCompare;
 var RadarChart;
 var RadarChartCompare;
+var data;
+var dataCompare;
 
 
 
@@ -50,12 +52,55 @@ myApp = myApp || (function () {
 
     };
 })();
-function updateWeekChart(chart){
-    
-    chart.datasets[0].points[2].value = 20;
-    chart.update();
+function updateSalesChart(chart,object){
+        
+        console.log(chart);
+        
+        if(chart=='salesChart'){
+           dataGet=data;
+        
+        }
+        else{
+            dataGet=dataCompare;
+        }
+        dataGet.date=object['label'];
+        var isCharSale=chart=="salesChart"?true:false;
+        $.ajaxq("QueueChart",{
+                url: 'api/BBVA/consumptionPattern',
+                dataType:'json',
+                
+                type:'post',
+                data:dataGet,
+                success:function(json){
+                    if(isCharSale){
+                       updateChartWeek(json,'salesChartweek');
+                    }
+                    else{
+                        updateChartWeek(json,'salesChartweekCompare');
+                   }
+                }
+            });
+}
+function updateChartWeek(json,chart){
+    var i;
+        if(chart=='salesChartweek'){
+            for(i=0;i<7;i++){
+             salesChartweek.datasets[0].points[i].value = json[i]['num_payments'];
+       }
+       
+        salesChartweek.update();
+    }
+    else{
+         for(i=0;i<7;i++){
+             salesChartweekCompare.datasets[0].points[i].value = json[i]['num_payments'];
+       }
+       
+        salesChartweekCompare.update();
+    }
+
 }
 function ShowCharts(){
+  Chart.defaults.global.responsive =true;
 
     var data = {
               labels: ["Nov", "Dic", "Ene", "Feb", "Mar", "Abr"],
@@ -72,21 +117,22 @@ function ShowCharts(){
                     },
                 ]
             };
-              var dataWeek = {
-              labels: ["Lun", "Mar", "Mier", "Jue", "Vie", "Sab",'Dom'],
+            var dataWeek = {
+              labels: ["Nov", "Dic", "Ene", "Feb", "Mar", "Abr",'sun'],
                 datasets: [
                     {
                         label: "My First dataset",
                         fillColor: "rgba(220,220,220,0.2)",
                         strokeColor: "rgba(220,220,220,1)",
-                        pointColor: "rgba(220,220,220,1)",
+                        pointColor: "rgba(15,220,179,1)",
                         pointStrokeColor: "#fff",
                         pointHighlightFill: "#fff",
                         pointHighlightStroke: "rgba(220,220,220,1)",
-                        data: [2, 7, 10, 8, 12, 5, 4]
+                        data:[60, 70, 80, 55, 56, 89,88]
                     },
                 ]
             };
+              
             var dataRadar = {
     labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
     datasets: [
@@ -104,20 +150,15 @@ function ShowCharts(){
 };
 
   
-            var ctx = $("#salesChart").get(0).getContext("2d");
-            var ctx2 = $("#salesChartCompare").get(0).getContext("2d");
+          
+           
             var ctxweek = $("#weekChart").get(0).getContext("2d");
             var ctxweek2 = $("#weekChartCompare").get(0).getContext("2d");
             var ctxradar = $("#radarChart").get(0).getContext("2d");
             var ctxradar2 = $("#radarChartCompare").get(0).getContext("2d");
-             chartSales = new Chart(ctx).Line(data, {
-                bezierCurve: false,
-
-            });
-            chartSalesCompare = new Chart(ctx2).Line(data, {
-                bezierCurve: false,
-
-            });
+            
+           
+           
              salesChartweek = new Chart(ctxweek).Line(dataWeek, {
                 bezierCurve: false,
 
@@ -132,23 +173,11 @@ function ShowCharts(){
             RadarChartCompare =new Chart(ctxradar2).Radar(dataRadar,{
                 
             });
+}         
+function showChartWeek(){
 
-
-            var canvas=document.getElementById('salesChart');
-            canvas.onclick=function(evt){
-                var activePoints = chartSales.getPointsAtEvent(evt);
-                 console.log(activePoints[0].value);
-                 updateWeekChart(salesChartweek);
-
-            };
-            var canvasCompare=document.getElementById('salesChartCompare');
-            canvasCompare.onclick=function(evt){
-                var activePoints = chartSalesCompare.getPointsAtEvent(evt);
-                 console.log(activePoints[0].value);
-                 updateWeekChart(salesChartweekCompare);
-
-            };
 }
+
 function showInfoPlace(json,map){
     if(map=='mapC'){
         $('#direccion').text(json['direccion']);
@@ -159,34 +188,102 @@ function showInfoPlace(json,map){
 
 }
 
-function showInfoBBVA(){
+function showInfoBBVA(json,chart){
 
+    var data = {
+              labels: ["Nov", "Dic", "Ene", "Feb", "Mar", "Abr"],
+                datasets: [
+                    {
+                        label: "My First dataset",
+                        fillColor: "rgba(220,220,220,0.2)",
+                        strokeColor: "rgba(220,220,220,1)",
+                        pointColor: "rgba(155,89,22,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data:[json[0]['num_payments'],
+                                json[1]['num_payments'],
+                                json[2]['num_payments'],
+                                json[3]['num_payments'],
+                                json[4]['num_payments'],
+                                json[5]['num_payments']
+                            ]
+                    },
+                ]
+            };
+            var max=Math.max(json[0]['num_payments'],
+                                json[1]['num_payments'],
+                                json[2]['num_payments'],
+                                json[3]['num_payments'],
+                                json[4]['num_payments'],
+                                json[5]['num_payments']);
+            var div=max>1000?1000:100;
+          if(chart=='salesChart'){  
+            var ctx = $("#salesChart").get(0).getContext("2d");
+             chartSales = new Chart(ctx).Line(data, {
+                bezierCurve: true,
+                scaleGridLineWidth : 0,
+                pointDotRadius : 7,
+                scaleOverride : true,
+                scaleSteps : (max*1.25)/div,
+                scaleStepWidth : 1000,
+                scaleStartValue : 0
+
+        });
+         }
+        else{
+             var ctx2 = $("#salesChartCompare").get(0).getContext("2d");
+              chartSalesCompare = new Chart(ctx2).Line(data, {
+                bezierCurve: true,
+                scaleGridLineWidth : 0,
+                pointDotRadius : 7,
+                scaleOverride : true,
+                  scaleSteps : (max*1.25)/div,
+                  scaleStepWidth : 1000,
+                  scaleStartValue : 0
+
+            });
+        }
+         var canvas=document.getElementById('salesChart');
+            canvas.onclick=function(evt){
+                var activePoints = chartSales.getPointsAtEvent(evt);
+                 updateSalesChart('salesChart',activePoints[0]);
+                 
+
+            };
+            var canvasCompare=document.getElementById('salesChartCompare');
+            canvasCompare.onclick=function(evt){
+                var activePoints = chartSalesCompare.getPointsAtEvent(evt);
+                 updateSalesChart('salesChartweek',activePoints[0]);
+                
+
+            };
 
 }
 function showInfoMap(json,map){
                         if(map=='mapC'){
                             initializeMapCompetencia('mapC');
-                            mapC.setView(new L.LatLng(json[0].lat,json[0].ln), 15);
+                            mapC.setView(new L.LatLng(json[0].latitude,json[0].longitude), 15);
                             setTimeout(function(){ mapC.invalidateSize()}, 1500);
                             $.each(json,function(index){
                                     if(index==0){
-                                        drawMarker(json[index].name,json[index].lat,json[index].ln,'mapC','CC22FF');
+                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapC','CC22FF');
                                     }
                                     else{
-                                        drawMarker(json[index].name,json[index].lat,json[index].ln,'mapC','ff1111');
+                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapC','ff1111');
                                     }
                             });
                         }
                         else{
                             initializeMapCompetencia('mapCompare');
-                            mapCompare.setView(new L.LatLng(json[0].lat,json[0].ln), 15);
+                            mapCompare.setView(new L.LatLng(json[0].latitude,json[0].longitude), 15);
                             setTimeout(function(){ mapCompare.invalidateSize()}, 1500);
                             $.each(json,function(index){
                                     if(index==0){
-                                        drawMarker(json[index].name,json[index].lat,json[index].ln,'mapCompare','CC22FF');
+                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapCompare','CC22FF');
                                     }
                                     else{
-                                        drawMarker(json[index].name,json[index].lat,json[index].ln,'mapCompare','ff1111');
+                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapCompare','ff1111');
                                     }
                             });
 
@@ -219,7 +316,7 @@ function drawMarker(name,lat,ln,map,color){
 function SendInfoSetup(place){
         var category = $('.icon.active').attr('id');
         var lat_lng;
-        var data;
+        var dataFinal;
         var isMapC=place=='place'?true:false;
         if(place=='placeCompare'){
             lat_lng=locatization.lat+','+locatization.lng; 
@@ -229,25 +326,28 @@ function SendInfoSetup(place){
                     lng:locatization.lng,
                     lat_lng:  lat_lng       
             }
+            dataFinal=data;
         }
         else{
             lat_lng=locatizationCompare.lat+','+locatizationCompare.lng; 
-             data={
+             dataCompare={
                     category:category,
                     lat:locatizationCompare.lat,
                     lng:locatizationCompare.lng,
                     lat_lng:  lat_lng       
             }
+            dataFinal=dataCompare;
         }
         $.get( "api/BBVA/TestRedisLocal", function( data ) {});
-
+        
+      
         //Trow 3 API Routes
         $.ajaxq("QueueAPIS",{
                 url: 'api/Google/geocode',
                 dataType:'json',
                 
                 type:'post',
-                data:data,
+                data:dataFinal,
                 success:function(json){
                     if(isMapC){
                        showInfoPlace(json,'mapC');
@@ -262,7 +362,7 @@ function SendInfoSetup(place){
                 dataType:'json',
                 
                 type:'post',
-                data:data,
+                data:dataFinal,
                 success:function(json){
                     if(isMapC){
                         showInfoMap(json,'mapC');
@@ -273,19 +373,19 @@ function SendInfoSetup(place){
                 }
             });
         $.ajaxq("QueueAPIS",{
-                url: 'api/BBVA/find',
+                url: 'api/BBVA/paymentDistribution',
                 dataType:'json',               
                 type:'post',
-                data:data,
+                data:dataFinal,
                 success:function(json){
                     if(isMapC){
-                            showInfoBBVA(json,'mapC');
+                            showInfoBBVA(json,'salesChart');
                     }
                     else{
                      $('#myModal').modal('hide');
                      $('.intro').hide(); 
                      $('#charts').show();
-                      showInfoBBVA(json,'mapCompare');
+                       showInfoBBVA(json,'salesChartCompare');
                     }
                    
                     
@@ -321,17 +421,11 @@ function initializeFuelux(){
 function initializeMapCompetencia(map){
                     if(map=='mapC'){
                         L.mapbox.accessToken = 'pk.eyJ1IjoibHUxenp6IiwiYSI6Imp0RnFuRm8ifQ.7oDrxlos9T1R3_RqKHyshQ';
-                        mapC = L.mapbox.map('mapC','examples.map-i86nkdio');
-                        mapC.featureLayer.on('click', function(e) {
-                             mapC.panTo(e.layer.getLatLng());
-                        });   
+                        mapC = L.mapbox.map('mapC','examples.map-i86nkdio');  
                     }
                     else{
                          L.mapbox.accessToken = 'pk.eyJ1IjoibHUxenp6IiwiYSI6Imp0RnFuRm8ifQ.7oDrxlos9T1R3_RqKHyshQ';
                         mapCompare = L.mapbox.map('mapCompare','examples.map-i86nkdio');
-                        mapCompare.featureLayer.on('click', function(e) {
-                             mapCompare.panTo(e.layer.getLatLng());
-                        });
                     }
                         
 

@@ -20,7 +20,7 @@ return array(
 	
 	'URL_BBVA_API'=>'https://apis.bbvabancomer.com/datathon/info/merchants_categories',
 	'URL_MERCHANTS_BBVA'=>'https://apis.bbvabancomer.com/datathon/info/merchants_categories',
-	'URL_TILES'=>'https://apis.bbvabancomer.com/datathon/info/tiles',
+	'URL_TILES'=>'https://apis.bbvabancomer.com/datathon/tiles/',
 
 
 
@@ -34,7 +34,9 @@ return array(
 	'URL_FOURSQUARE_API'=>'https://api.foursquare.com/v2/venues/search?ll=',
 
 
-	'API_KEY_FACTUAL'=>'XNvygYbb7WZuLf6JLdeJ1dXtiCGQJHW2qc8IJ0En',
+	'OAUTH_KEY_FACTUAL'    =>'ntBCO3sdmcdBn4tVNBKLLuRnmmlj2x4CNo3MBpuj',
+	'OAUTH_SECRECT_FACTUAL'=>'qboFwPIERGS2BG2uecYUX300gRjSKVixXUKwhO9j',
+
 	'URL_API_FACTUAL'=>'http://api.v3.factual.com/t/places-mx',
 
 

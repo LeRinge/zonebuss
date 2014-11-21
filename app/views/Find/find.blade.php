@@ -387,24 +387,24 @@
         </div>
         <div id="salesCharts" class="row top-bufferCharts">
             <div  class="col-md-4 col-md-offset-1">
-                <canvas id="salesChart" width="300" height="150"></canvas>
+                <canvas id="salesChart"></canvas>
              </div>
              <div  class="col-md-2">
 
              </div>
              <div  class="col-md-4 ">
-                <canvas id="salesChartCompare" width="300" height="150"></canvas>
+                <canvas id="salesChartCompare" ></canvas>
              </div> 
         </div>   
          <div id="weekCharts" class="row top-bufferCharts">
             <div  class="col-md-4 col-md-offset-1">
-                <canvas id="weekChart" width="300" height="150"></canvas>
+                <canvas id="weekChart" ></canvas>
              </div>
              <div  class="col-md-2">
 
              </div>
              <div  class="col-md-4 ">
-                <canvas id="weekChartCompare" width="300" height="150"></canvas>
+                <canvas id="weekChartCompare" ></canvas>
              </div> 
         </div>   
          <div id="Charts" class="row top-bufferCharts">
@@ -418,17 +418,8 @@
                 <canvas id="radarChartCompare" width="400" height="200"></canvas>
              </div> 
         </div>   
-    </section>
+    
 
-         
-
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>BBVA Innova challenge 2014</h2>                
-            </div>
-        </div>
     </section>
 
     {{ HTML::script('js/jquery.js') }}  
