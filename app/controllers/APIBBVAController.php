@@ -4,8 +4,32 @@ use GuzzleHttp\Exception\ClientException;
 
 class APIBBVAController extends \BaseController {
 
+
+	public function PaymentCube(){
+
+		$data=array(
+			'category' =>Input::get('category'),
+			'lat'=> Input::get('lat'),
+			'lng'=> Input::get('lng'),
+			'lat_lng' => Input::get('lat_lng')
+			);
+		$client = new Client();
+		$url = Config::get('app.URL_BBVA_API');
+		$API_ID = Config::get('app.API_ID');
+		$APP_KEY = Config::get('app.APP_KEY');
+		$APP_ID_BASE64 =Config::get('app.APP_ID_BASE64');
+		$request = $client->createRequest('GET', $url);
+		$request-> setHeader("Authorization",$APP_ID_BASE64);
+		$request-> setHeader("Accept-Language",'ES');
+		$response = $client->send($request);
+		$json = $response->json();
+		$categories = $json["data"]["categories"];
+		return $categories;
+
+	}
 	public function Categories(){
 		
+
 		$client = new Client();
 		$url = Config::get('app.URL_BBVA_API');
 		$API_ID = Config::get('app.API_ID');

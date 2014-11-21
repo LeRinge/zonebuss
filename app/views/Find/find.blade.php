@@ -28,6 +28,8 @@
 
      <style type="text/css">
         .top-buffer { margin-bottom:10px; }
+        .top-bufferCharts { margin-bottom:25px; }
+        .top-bufferChartsGender { margin-bottom:5px; }
           .map { position: relative;float: left;width:100%; height: 480px; }
           .mapC { position: relative;float: left;width:100%; height: 360px; }
           .centered img { display: inline; }
@@ -66,17 +68,17 @@
             </div>
       </div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-               
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa"></i>  <span> Zonebuss </span>
+                </a>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
+             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
@@ -84,12 +86,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                      <!--  <a class="page-scroll" href="#about">About</a>-->
+                        <a class="page-scroll" href="#about">About</a>
                     </li>
-                    
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
@@ -266,17 +269,155 @@
    
 
     <section id="charts" class="chartBack" style="display:none">
-        <div class="row">
-             <h3><span id="direccion" class="label label-info"></span></h3>
+        <div id="direcctions" class="row">
+             <div  class="col-md-4 col-md-offset-1">
+                <h5><span id="direccion" class="label label-info"></span></h5>
+             </div>
+             <div  class="col-md-2">
+
+             </div>
+             <div  class="col-md-4 ">
+                <h5><span id="direccionCompare" class="label label-info"></span></h5>
+             </div>      
         </div>
+        <div id="maps" class="row top-bufferCharts">
 
-        <div class="row">
-
-            <div  class="col-md-6 col-md-offset-3">
+            <div  class="col-md-4 col-md-offset-1">
                 <div class="mapC" id="mapC" ></div>
             </div>
+             <div  class="col-md-2">
+             
+             </div>
+             <div  class="col-md-4">
+                <div class="mapC" id="mapCompare" ></div>
+             </div>
         </div>
+        <div id="genderCharts" class="row top-bufferCharts">
+            <div  class="col-md-4 col-md-offset-1">
+                <div class="row">
+                     <div  class="col-md-3">
+                        <h5><span>Genero<span>
+                     </div>
+                     <div  class="col-md-3">
+                            Rango Edad
+                     </div>
+                      <div  class="col-md-3">
+                           Promedio Ticket
+                     </div>
+                     <div  class="col-md-3">
+                            Maxico ticket
+                     </div>
+                </div>
+                <div class="row top-bufferChartsGender">
+                     <div  class="col-md-3">
+                            <img src="../img/men.png" alt="32x32">
+                     </div>
+                     <div  class="col-md-3">
+                            25-40
+                     </div>
+                      <div class="col-md-3">
+                            300
+                     </div>
+                     <div  class="col-md-3">
+                            600
+                     </div>
+                </div>
+                <div class="row">
+                     <div  class="col-md-3">
+                            <img src="../img/woman.png" alt="32x32">
+                     </div>
+                     <div  class="col-md-3">
+                            25-40
+                     </div>
+                      <div class="col-md-3">
+                            300
+                     </div>
+                     <div class="col-md-3">
+                            600
+                     </div>
+                </div>
+             </div>   
+            <div  class="col-md-2">
+            </div>
+            <div  class="col-md-4">
+                <div class="row">
+                     <div  class="col-md-3">
+                        <h5><span>Genero<span>
+                     </div>
+                     <div  class="col-md-3">
+                            Rango Edad
+                     </div>
+                      <div  class="col-md-3">
+                           Promedio Ticket
+                     </div>
+                     <div  class="col-md-3">
+                            Maxico ticket
+                     </div>
+                </div>
+                <div class="row top-bufferChartsGender">
+                     <div  class="col-md-3">
+                            <img src="../img/men.png" alt="32x32">
+                     </div>
+                     <div  class="col-md-3">
+                            25-40
+                     </div>
+                      <div class="col-md-3">
+                            300
+                     </div>
+                     <div  class="col-md-3">
+                            600
+                     </div>
+                </div>
+                <div class="row">
+                     <div  class="col-md-3">
+                            <img src="../img/woman.png" alt="32x32">
+                     </div>
+                     <div  class="col-md-3">
+                            25-40
+                     </div>
+                      <div class="col-md-3">
+                            300
+                     </div>
+                     <div class="col-md-3">
+                            600
+                     </div>
+                </div>
+            </div>  
 
+        </div>
+        <div id="salesCharts" class="row top-bufferCharts">
+            <div  class="col-md-4 col-md-offset-1">
+                <canvas id="salesChart" width="300" height="150"></canvas>
+             </div>
+             <div  class="col-md-2">
+
+             </div>
+             <div  class="col-md-4 ">
+                <canvas id="salesChartCompare" width="300" height="150"></canvas>
+             </div> 
+        </div>   
+         <div id="weekCharts" class="row top-bufferCharts">
+            <div  class="col-md-4 col-md-offset-1">
+                <canvas id="weekChart" width="300" height="150"></canvas>
+             </div>
+             <div  class="col-md-2">
+
+             </div>
+             <div  class="col-md-4 ">
+                <canvas id="weekChartCompare" width="300" height="150"></canvas>
+             </div> 
+        </div>   
+         <div id="Charts" class="row top-bufferCharts">
+            <div  class="col-md-4 col-md-offset-1">
+                <canvas id="radarChart" width="400" height="200"></canvas>
+             </div>
+             <div  class="col-md-2">
+
+             </div>
+             <div  class="col-md-4 ">
+                <canvas id="radarChartCompare" width="400" height="200"></canvas>
+             </div> 
+        </div>   
     </section>
 
          
@@ -297,6 +438,8 @@
     {{ HTML::script('js/grayscale.js') }}
     {{ HTML::script('js/ajaxq.js') }}
     {{ HTML::script('js/app.js') }}
+    {{ HTML::script('js/Chart.min.js') }}
+
     <script>
 
 </script>
