@@ -190,6 +190,16 @@ function showInfoPlace(json,map){
 
 function showInfoBBVA(json,chart){
 
+    var num_payments=[];
+    json.forEach(function(entry){
+                    if(entry['num_payments']===undefined){
+                        num_payments.push(0);
+                       
+                    }
+                    else{
+                         num_payments.push(entry['num_payments']);
+                    }
+            });
     var data = {
               labels: ["Nov", "Dic", "Ene", "Feb", "Mar", "Abr"],
                 datasets: [
@@ -201,22 +211,12 @@ function showInfoBBVA(json,chart){
                         pointStrokeColor: "#fff",
                         pointHighlightFill: "#fff",
                         pointHighlightStroke: "rgba(220,220,220,1)",
-                        data:[json[0]['num_payments'],
-                                json[1]['num_payments'],
-                                json[2]['num_payments'],
-                                json[3]['num_payments'],
-                                json[4]['num_payments'],
-                                json[5]['num_payments']
-                            ]
+                        data:num_payments
                     },
                 ]
             };
-            var max=Math.max(json[0]['num_payments'],
-                                json[1]['num_payments'],
-                                json[2]['num_payments'],
-                                json[3]['num_payments'],
-                                json[4]['num_payments'],
-                                json[5]['num_payments']);
+
+            var max=Math.max(num_payments);
             var div=max>1000?1000:100;
           if(chart=='salesChart'){  
             var ctx = $("#salesChart").get(0).getContext("2d");
