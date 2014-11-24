@@ -74,6 +74,8 @@ class APIBBVAController extends \BaseController {
 		$response = $clientBBVA->send($request);
 		$json = $response->json();
 
+
+
 		return $json;
 
 
@@ -138,6 +140,72 @@ class APIBBVAController extends \BaseController {
 					$max=0;
 		}
 		return json_encode($dataFinal);
+
+	}
+	public function cardCube(){
+		$data=array(
+			'category' =>Input::get('category'),
+			'lat'=> Input::get('lat'),
+			'lng'=> Input::get('lng'),
+			'lat_lng' => Input::get('lat_lng'),
+			'date'=> Input::get('date')
+			);
+		$client = new Client();
+		$url = Config::get('app.URL_TILES');
+		$API_ID = Config::get('app.API_ID');
+		$APP_KEY = Config::get('app.APP_KEY');
+		$APP_ID_BASE64 =Config::get('app.APP_ID_BASE64');
+		$request = $client->createRequest('GET', $url .(string)$data['lat'].'/'.(string)$data['lng'].'/cards_cube');
+		$query = $request->getQuery();
+		$query->set('category', $data['category']);
+		$query->set('group_by','month');
+		if($data['date']=='Nov'){
+			$query->set('date_min','20131101');
+			$query->set('date_max','20131130');
+		} elseif ($data['date']=='Dic') {
+			$query->set('date_min','20131201');
+			$query->set('date_max','20131231');
+		} elseif ($data['date']=='Ene') {
+			$query->set('date_min','20140101');
+			$query->set('date_max','20140131');
+		} elseif ($data['date']=='Feb') {
+			$query->set('date_min','20140201');
+			$query->set('date_max','20140228');
+		} elseif ($data['date']=='Mar') {
+			$query->set('date_min','20140301');
+			$query->set('date_max','20140331');
+		} elseif ($data['date']=='Abr') {
+			$query->set('date_min','20140401');
+			$query->set('date_max','20140430');
+		} 
+		$request-> setHeader("Authorization",$APP_ID_BASE64);
+		$request-> setHeader("Accept-Language",'ES');
+		$response = $client->send($request);
+		$json = $response->json();
+		$dataJson=$json['data']['stats'];
+
+		$percentageM=0;
+		$percentageF=0;
+		$percentageU=0;
+		foreach ($dataJson as $item) {
+				if(substr($item['hash'],0,1)=='M'){
+					$percentageM+=$item['num_payments'];
+				} elseif (substr($item['hash'],0,1)=='F') {
+					$percentageF+=$item['num_payments'];
+				}
+				else{
+						$percentageU+=$item['num_payments'];
+				}
+		}
+
+		
+
+
+		return json_encode(array('M'=>$percentageM,
+								 'F'=>$percentageF,
+								 'U'=>$percentageU
+								 )
+							);
 
 	}
 

@@ -293,97 +293,102 @@
              </div>
         </div>
         <div id="genderCharts" class="row top-bufferCharts">
-            <div  class="col-md-4 col-md-offset-1">
-                <div class="row">
-                     <div  class="col-md-3">
-                        <h5><span>Genero<span>
-                     </div>
-                     <div  class="col-md-3">
-                            Rango Edad
-                     </div>
-                      <div  class="col-md-3">
-                           Promedio Ticket
-                     </div>
-                     <div  class="col-md-3">
-                            Maxico ticket
-                     </div>
-                </div>
-                <div class="row top-bufferChartsGender">
-                     <div  class="col-md-3">
-                            <img src="../img/men.png" alt="32x32">
-                     </div>
-                     <div  class="col-md-3">
-                            25-40
-                     </div>
-                      <div class="col-md-3">
-                            300
-                     </div>
-                     <div  class="col-md-3">
-                            600
-                     </div>
-                </div>
-                <div class="row">
-                     <div  class="col-md-3">
-                            <img src="../img/woman.png" alt="32x32">
-                     </div>
-                     <div  class="col-md-3">
-                            25-40
-                     </div>
-                      <div class="col-md-3">
-                            300
-                     </div>
-                     <div class="col-md-3">
-                            600
-                     </div>
-                </div>
-             </div>   
-            <div  class="col-md-2">
-            </div>
-            <div  class="col-md-4">
-                <div class="row">
-                     <div  class="col-md-3">
-                        <h5><span>Genero<span>
-                     </div>
-                     <div  class="col-md-3">
-                            Rango Edad
-                     </div>
-                      <div  class="col-md-3">
-                           Promedio Ticket
-                     </div>
-                     <div  class="col-md-3">
-                            Maxico ticket
-                     </div>
-                </div>
-                <div class="row top-bufferChartsGender">
-                     <div  class="col-md-3">
-                            <img src="../img/men.png" alt="32x32">
-                     </div>
-                     <div  class="col-md-3">
-                            25-40
-                     </div>
-                      <div class="col-md-3">
-                            300
-                     </div>
-                     <div  class="col-md-3">
-                            600
-                     </div>
-                </div>
-                <div class="row">
-                     <div  class="col-md-3">
-                            <img src="../img/woman.png" alt="32x32">
-                     </div>
-                     <div  class="col-md-3">
-                            25-40
-                     </div>
-                      <div class="col-md-3">
-                            300
-                     </div>
-                     <div class="col-md-3">
-                            600
-                     </div>
-                </div>
-            </div>  
+            <div class="row">
+             <div  class="col-md-4 col-md-offset-1">
+                    <canvas id="genderChart" ></canvas>
+             </div>
 
+             <div  class="col-md-2">
+             </div>
+            <div  class="col-md-4">
+                    <canvas id="genderChartCompare" ></canvas>
+             </div>
+
+            </div>
+            <div class="row">
+                <div  class="col-md-4 col-md-offset-1">
+                    
+
+                    <div class="row">
+                         <div  class="col-md-3">
+                            <h5><span>Genero<span>
+                         </div>
+                         <div  class="col-md-3">
+                                Rango Edad
+                         </div>
+                          <div  class="col-md-3">
+                               Promedio Ticket
+                         </div>
+                        
+                    </div>
+                    <div class="row top-bufferChartsGender">
+                         <div  class="col-md-3">
+                                <img src="../img/men.png" alt="32x32">
+                         </div>
+                         <div  class="col-md-3">
+                                25-40
+                         </div>
+                          <div class="col-md-3">
+                                300
+                         </div>
+                        
+                    </div>
+                    <div class="row">
+                         <div  class="col-md-3">
+                                <img src="../img/woman.png" alt="32x32">
+                         </div>
+                         <div  class="col-md-3">
+                                25-40
+                         </div>
+                          <div class="col-md-3">
+                                300
+                         </div>
+                        
+                    </div>
+                 </div>   
+                <div  class="col-md-2">
+                </div>
+                <div  class="col-md-4">
+                    <div class="row">
+                         <div  class="col-md-3">
+                            <h5><span>Genero<span>
+                         </div>
+                         <div  class="col-md-3">
+                                Rango Edad
+                         </div>
+                          <div  class="col-md-3">
+                               Promedio Ticket
+                         </div>
+                         <div  class="col-md-3">
+                                Maxico ticket
+                         </div>
+                    </div>
+                    <div class="row top-bufferChartsGender">
+                         <div  class="col-md-3">
+                                <img src="../img/men.png" alt="32x32">
+                         </div>
+                         <div  class="col-md-3">
+                                25-40
+                         </div>
+                          <div class="col-md-3">
+                                300
+                         </div>
+                        
+                    </div>
+                    <div class="row">
+                         <div  class="col-md-3">
+                                <img src="../img/woman.png" alt="32x32">
+                         </div>
+                         <div  class="col-md-3">
+                                25-40
+                         </div>
+                          <div class="col-md-3">
+                                300
+                         </div>
+                        
+                    </div>
+                </div>  
+            </div>
         </div>
         <div id="salesCharts" class="row top-bufferCharts">
             <div  class="col-md-4 col-md-offset-1">
@@ -405,17 +410,6 @@
              </div>
              <div  class="col-md-4 ">
                 <canvas id="weekChartCompare" ></canvas>
-             </div> 
-        </div>   
-         <div id="Charts" class="row top-bufferCharts">
-            <div  class="col-md-4 col-md-offset-1">
-                <canvas id="radarChart" width="400" height="200"></canvas>
-             </div>
-             <div  class="col-md-2">
-
-             </div>
-             <div  class="col-md-4 ">
-                <canvas id="radarChartCompare" width="400" height="200"></canvas>
              </div> 
         </div>   
     

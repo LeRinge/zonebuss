@@ -15,11 +15,13 @@ Route::get('/', function()
 {
 	return View::make('index');
 });
+
 Route::resource("find","ZonebussController");
 
-Route::get('api/BBVA/TestRedisLocal', 'APIBBVAController@TestRedisLocal');
 Route::post('api/BBVA/paymentDistribution', 'APIBBVAController@paymentDistribution');
 Route::post('api/BBVA/consumptionPattern', 'APIBBVAController@consumptionPattern');
+Route::post('api/BBVA/cardCube', 'APIBBVAController@cardCube');
+
 
 Route::post('api/BBVA/find', 'APIBBVAController@find');
 
