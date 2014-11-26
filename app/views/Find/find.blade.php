@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+     <link rel="shortcut icon" href="../img/logo.ico">
     <title>Zonebuss</title
        <!-- Bootstrap Core CSS -->
 	 <!-- Custom CSS -->
@@ -71,25 +71,24 @@
      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
+                <img src="../img/logo.png" >
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
+                <a class="navbar-brand page-scroll" href="{{ URL::to('/'); }}">
+                    
                     <i class="fa"></i>  <span> Zonebuss </span>
                 </a>
             </div>
              <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
+                    
+                    <li>
+                        <a class="page-scroll" href="{{ URL::to('about'); }}">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="{{ URL::to('contact'); }}">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -98,7 +97,7 @@
     </nav>
 
     <!-- Intro Header -->
-    <header class="intro">
+    <header class="introWizard">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
@@ -106,9 +105,10 @@
                   
                         <div class="wizard" id="myWizard" data-initialize="wizard" data-restrict="previous">
                             <ul class="steps">
-                                <li data-step="1" class="active"><span class="badge">1</span>Tipo de negocio<span class="chevron"></span></li>
-                                <li data-step="2"><span class="badge">2</span>Ubicacion<span class="chevron"></span></li>
-                                <li data-step="3"><span class="badge">3</span>Finalizar<span class="chevron"></span></li>
+                                <li data-step="1" class="active"><span class="badge">1</span>
+                                   <span class="description">Tipo de negocio</span> <span class="chevron"></span></li>
+                                <li data-step="2"><span class="badge">2</span><span class="description">Ubicaciones</span><span class="chevron"></span></li>
+                                <li data-step="3"><span class="badge">3</span><span class="description">Finalizar</span><span class="chevron"></span></li>
                             </ul>
                        
                             <div class="actions">
@@ -116,35 +116,47 @@
                                 <button class="btn btn-default btn-next" data-last="Complete">Next<span class="glyphicon glyphicon-arrow-right"></span></button>
                             </div>
                           <div class="step-content">
-                                <div class="step-pane active sample-pane" data-step="1">                            
+                                <div class="step-pane active sample-pane" data-step="1">     
+                                                          
                                     <div class="container">
                                         <div class="row top-buffer">
                                             <div class="col-md-2 col-md-offset-1">
-                                               <button id="mx_auto" autocomplete="off" type="button" class="icon btn btn-default btn-lg" data-toggle="button" aria-pressed="false" >
+                                            </div>
+                                             <div class="col-md-6" >
+                                                <span class="descriptionTitleWizard">Elige la categoria que se adecue a tu negocio.</span> 
+                                            </div>
+                                            <div class="col-md-2" >
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row top-buffer">
+                                            <div class="col-md-2 col-md-offset-1">
+                                               <button id="mx_auto" autocomplete="off" type="button" class="icon btn btn-default btn-lg" data-toggle="button" aria-pressed="false"  data-toggle="tooltip" data-placement="top" title="Auto">
                                                     <img src="../img/Icons/car.png" alt="64x64">
                                                     
                                                </button>
                                                 
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="mx_barsandrestaurants" autocomplete="off" type="button" class="icon  btn btn-default btn-lg" data-toggle="button" aria-pressed="false">
+                                                   <button id="mx_barsandrestaurants" autocomplete="off" type="button" class="icon  btn btn-default btn-lg" data-toggle="button" aria-pressed="false" data-toggle="tooltip" data-placement="top" title="Bares y restaurantes">
                                                     <img src="../img/Icons/barsandrestaurants.png" alt="64x64">
                                                     
                                                     </button>
                                                     
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="mx_beauty" type="button" class="icon btn btn-default btn-lg"data-toggle="button">
+                                                   <button id="mx_beauty" type="button" class="icon btn btn-default btn-lg"data-toggle="button" data-toggle="tooltip" data-placement="top" title="Belleza">
                                               <img src="../img/Icons/beauty.png" alt="64x64">
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="mx_book" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_book" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Libros">
                                                     <img src="../img/Icons/book.png" alt="64x64">
                                                      </button>
                                             </div>
                                              <div class="col-md-2">
-                                                <button id="mx_constructionmaterials" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                <button id="mx_constructionmaterials" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Materiales de construccion">
                                                     <img src="../img/Icons/constructionmaterials.png" alt="64x64">
                                                     
                                                  </button>
@@ -153,27 +165,27 @@
                                         <div class="row top-buffer">
                                            
                                             <div class="col-md-2 col-md-offset-1">
-                                                 <button id="mx_education" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                 <button id="mx_education" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Educacion">
                                                     <img src="../img/Icons/education.png" alt="64x64">
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button id="mx_fashion" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="mx_fashion" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Moda">
                                                     <img src="../img/Icons/fashion.png" alt="64x64">
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="mx_food" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_food" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Comida rapida">
                                                     <img src="../img/Icons/food.png" alt="64x64">
                                                      </button>
                                             </div>
                                              <div class="col-md-2">
-                                               <button id="mx_health" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                               <button id="mx_health" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Salud">
                                                     <img src="../img/Icons/health.png" alt="64x64">
                                                      </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button id="mx_hyper" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="mx_hyper" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Centros comerciales">
                                                     <img src="../img/Icons/hyper.png" alt="64x64">
                                                  </button>
                                             </div>
@@ -181,27 +193,27 @@
                                         <div class="row top-buffer">
                                            
                                             <div class="col-md-2 col-md-offset-1">
-                                                   <button id="mx_jewelry" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_jewelry" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Joyeria">
                                                     <img src="../img/Icons/jewelry.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="mx_leisure" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_leisure" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Entretenimiento">
                                                     <img src="../img/Icons/leisure.png" alt="64x64">
                                                 </button>
                                             </div>
                                              <div class="col-md-2">
-                                                <button id="mx_music" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                <button id="mx_music" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Musica">
                                                     <img src="../img/Icons/music.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="mx_office" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_office" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Oficina">
                                                     <img src="../img/Icons/office.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                   <button id="mx_others" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_others" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Otros">
                                                     <img src="../img/Icons/others.png" alt="64x64">
                                                  </button>
                                             </div>
@@ -209,39 +221,39 @@
                                         <div class="row top-buffer">
                                            
                                             <div class="col-md-2 col-md-offset-1">
-                                                   <button id="mx_pet" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                   <button id="mx_pet" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Mascotas">
                                                     <img src="../img/Icons/pet.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                <button id="mx_services" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                <button id="mx_services" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Servicios">
                                                     <img src="../img/Icons/services.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button id="mx_shoes" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="mx_shoes" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Zapatos">
                                                     <img src="../img/Icons/shoes.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                 <button id="mx_sport" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                 <button id="mx_sport" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Deportes">
                                                     <img src="../img/Icons/sport.png" alt="64x64">
                                                  </button>
                                             </div>
                                             <div class="col-md-2">
-                                                  <button id="mx_tech" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                  <button id="mx_tech" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Tecnologia">
                                                     <img src="../img/Icons/tech.png" alt="64x64">
                                                  </button>
                                             </div>
                                         </div>
                                         <div class="row top-buffer">
                                             <div class="col-md-2 col-md-offset-1">
-                                               <button id="mx_travel" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                               <button id="mx_travel" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Viajes">
                                                     <img src="../img/Icons/travel.png" alt="64x64">
                                                  </button>
                                             </div>
                                              <div class="col-md-2">
-                                                <button id="mx_home" type="button" class="icon btn btn-default btn-lg" data-toggle="button">
+                                                <button id="mx_home" type="button" class="icon btn btn-default btn-lg" data-toggle="button" data-toggle="tooltip" data-placement="top" title="Casa">
                                                     <img src="../img/Icons/home.png" alt="64x64">
                                                  </button>
                                             </div>
@@ -250,13 +262,24 @@
                                     </div>
                                 </div>
                                 <div class="step-pane" data-step="2" >
+                                     <div class="row top-buffer">
+                                            <div class="col-md-2 col-md-offset-1">
+                                            </div>
+                                             <div class="col-md-6" >
+                                                <span class="descriptionTitleWizard">Elige dos zonas a comparar, arrastrando los marcadores.</span> 
+                                            </div>
+                                            <div class="col-md-2" >
+                                            </div>
+
+                                        </div>
                                     <div id="map" class="map"></div>
                                 </div>
                                 <div class="step-pane" data-step="3">
                                   <div class="jumbotron">
-                                  <h1>Finalizar</h1>
-                                  <p>Estos son las configuraciones elegidas.</p>
-
+                                  <span class="descriptionTitleWizardBig">
+                                        Presiona el boton "complete" para obtener los resultados !!
+                                  </div>
+                                  
                                 </div>
                                 </div>
                           </div>
@@ -270,14 +293,14 @@
 
     <section id="charts" class="chartBack" style="display:none">
         <div id="direcctions" class="row">
-             <div  class="col-md-4 col-md-offset-1">
-                <h5><span id="direccion" class="label label-info"></span></h5>
+             <div  class="col-md-4 col-md-offset-1 text-center">
+                <h5><span id="direccion" class="descriptionDirecction"></span></h5>
              </div>
              <div  class="col-md-2">
 
              </div>
-             <div  class="col-md-4 ">
-                <h5><span id="direccionCompare" class="label label-info"></span></h5>
+             <div  class="col-md-4 text-center">
+                <h5><span id="direccionCompare" class="descriptionDirecction"></span></h5>
              </div>      
         </div>
         <div id="maps" class="row top-bufferCharts">
@@ -314,10 +337,10 @@
                             <h5><span>Genero<span>
                          </div>
                          <div  class="col-md-3">
-                                Rango Edad
+                                
                          </div>
                           <div  class="col-md-3">
-                               Promedio Ticket
+                               
                          </div>
                         
                     </div>
@@ -326,10 +349,10 @@
                                 <img src="../img/men.png" alt="32x32">
                          </div>
                          <div  class="col-md-3">
-                                25-40
+                               <h5><span id="RangoH" class="label label-info"></span></h5>
                          </div>
                           <div class="col-md-3">
-                                300
+                                <h5><span id="AvgH" class="label label-info"></span></h5>
                          </div>
                         
                     </div>
@@ -338,10 +361,10 @@
                                 <img src="../img/woman.png" alt="32x32">
                          </div>
                          <div  class="col-md-3">
-                                25-40
+                                 <h5><span id="RangoF" class="label label-info"></span></h5>
                          </div>
                           <div class="col-md-3">
-                                300
+                                   <h5><span id="AvgF" class="label label-info"></span></h5>
                          </div>
                         
                     </div>
@@ -354,13 +377,10 @@
                             <h5><span>Genero<span>
                          </div>
                          <div  class="col-md-3">
-                                Rango Edad
+                                 
                          </div>
                           <div  class="col-md-3">
-                               Promedio Ticket
-                         </div>
-                         <div  class="col-md-3">
-                                Maxico ticket
+                                
                          </div>
                     </div>
                     <div class="row top-bufferChartsGender">
@@ -368,10 +388,10 @@
                                 <img src="../img/men.png" alt="32x32">
                          </div>
                          <div  class="col-md-3">
-                                25-40
+                               <h5><span id="RangoHCompare" class="label label-info"></span></h5>
                          </div>
                           <div class="col-md-3">
-                                300
+                                <h5><span id="AvgHCompare" class="label label-info"></span></h5>
                          </div>
                         
                     </div>
@@ -380,10 +400,10 @@
                                 <img src="../img/woman.png" alt="32x32">
                          </div>
                          <div  class="col-md-3">
-                                25-40
+                                 <h5><span id="RangoFCompare" class="label label-info"></span></h5>
                          </div>
                           <div class="col-md-3">
-                                300
+                                <h5><span id="AvgFCompare" class="label label-info"></span></h5>
                          </div>
                         
                     </div>
@@ -424,8 +444,8 @@
     {{ HTML::script('js/ajaxq.js') }}
     {{ HTML::script('js/app.js') }}
     {{ HTML::script('js/Chart.min.js') }}
-
     <script>
+    
 
 </script>
 </body>

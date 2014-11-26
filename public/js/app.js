@@ -36,9 +36,10 @@ $(document).ready(function(){
                     SendInfoSetup('placeCompare');
                     
                     $('#myWizard').wizard("destroy");
-                     $('#myModal').modal('hide');
+                     
                      $('.intro').hide(); 
                      $('#charts').show();
+                     $('#myModal').modal('hide');
                   
               });
 
@@ -69,7 +70,7 @@ function updateSalesChart(chart,object){
         }
         dataGet.date=object['label'];
         var isCharSale=chart=="salesChart"?true:false;
-        $.ajax({
+        $.ajaxq('QueueCharts',{
                 url: 'api/BBVA/consumptionPattern',
                 dataType:'json',
                 
@@ -117,31 +118,84 @@ function updateChartWeek(json,chart){
     }
 
 }
+function updateInfoGender(json,chart){
+console.log(json);
+    if(chart=='genderChart'){
+        $('#RangoH').text(json['M']['Range']);
+        $('#AvgH').text(json['M']['Avg']);
+        $('#RangoF').text(json['F']['Range']);
+        $('#AvgF').text(json['F']['Avg']);
+    }
+    else{
+        $('#RangoHCompare').text(json['M']['Range']);
+        $('#AvgHCompare').text(json['M']['Avg']);
+        $('#RangoFCompare').text(json['F']['Range']);
+        $('#AvgFCompare').text(json['F']['Avg']);
+    }
+
+}
 function updateChartGender(json,chart){
-       var i;
-       console.log(json);
+
+     
          if(chart=='genderChart'){
+              
+                    
+                    doughnutgenderChart.segments[0].value = json['M']['percentage'];
+                    doughnutgenderChart.segments[1].value = json['F']['percentage'];
                     doughnutgenderChart.update();
                 }
         else{
-            doughnutgenderChartCompare.update();
+            
+                    doughnutgenderChartCompare.segments[0].value = json['M']['percentage'];
+                    doughnutgenderChartCompare.segments[1].value = json['F']['percentage'];
+                    doughnutgenderChartCompare.update();
         }
+}
+function updateSalesChartGender(chart,object){
+
+  
+        if(chart=='genderChart'){
+           dataGet=data;
+        
+        }
+        else{
+            dataGet=dataCompare;
+        }
+        dataGet.date=object['label'];
+        $.ajaxq('QueueCharts',{
+                url: 'api/BBVA/cardCube',
+                dataType:'json',
+                
+                type:'post',
+                data:dataGet,
+                success:function(json){
+                    if(chart=='genderChart'){
+                       updateInfoGender(json,'genderChart');
+                       updateChartGender(json,'genderChart');
+                    }
+                    else{
+                        updateInfoGender(json,'genderChartCompare');
+                        updateChartGender(json,'genderChartCompare');
+                   }
+                }
+            });
+
+
 }
 function ShowChartsGender(chart){
     
         var isWeekChart=chart=='weekChart'?true:false;
-         var dataGender=[
+        
+        var dataGender=[
                     {
-                    value: 300,
-                    color:"#F7464A",
-                    highlight: "#FF5A5E",
-                    label: "Woman"
+                    value:5,
+                    color:"#16A6ED",
+                    label: "Hombres"
                 },
                 {
-                    value: 50,
-                    color: "#46BFBD",
-                    highlight: "#5AD3D1",
-                    label: "Man"
+                    value:5,
+                    color: "#E80085",
+                    label: "Mujeres"
                 }
             ]
                    
@@ -153,6 +207,7 @@ function ShowChartsGender(chart){
              var ctxGender = $("#genderChart").get(0).getContext("2d");
               doughnutgenderChart = new Chart(ctxGender).Doughnut(dataGender,{
                     animationEasing : "easeOutBounce",
+                    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
               });
         
         }
@@ -163,10 +218,11 @@ function ShowChartsGender(chart){
             doughnutgenderChartCompare = new Chart(ctxGenderCompare).Doughnut(dataGender, {
                //String - Animation easing effect
                     animationEasing : "easeOutBounce",
+                    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
             });
         }
         dataGet.date='Nov';
-        $.ajaxq("QueueChart",{
+        $.ajaxq("QueueCharts",{
                 url: 'api/BBVA/cardCube',
                 dataType:'json',
                 
@@ -175,12 +231,12 @@ function ShowChartsGender(chart){
                 success:function(json){
                     
                     if(chart=='genderChart'){
-                        console.log('genderChart');
+                         updateInfoGender(json,'genderChart');
                        updateChartGender(json,'genderChart');
                     }
                     else{
-                        console.log('genderChartCompare');
-                        updateChartGender(json,'genderChartComapare');
+                         updateInfoGender(json,'genderChartCompare');
+                        updateChartGender(json,'genderChartCompare');
                    }
                 }
             });
@@ -195,13 +251,13 @@ function ShowChartsWeek(chart){
                 datasets: [
                     {
                         label: "weekChart",
-                        fillColor: "rgba(220,220,220,0.2)",
-                        strokeColor: "rgba(220,220,220,1)",
-                        pointColor: "rgba(155,89,22,1)",
-                        pointStrokeColor: "#fff",
+                        fillColor: "#84DEC5",
+                        strokeColor: "#84DEC5",
+                        pointColor: "#84DEC5",
+                        pointStrokeColor: "#84DEC5",
                     
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        pointHighlightFill: "#84DEC5",
+                        pointHighlightStroke: "#84DEC5",
                         data:[0,0,0,0,0,0,0]
                     },
                 ]
@@ -213,7 +269,6 @@ function ShowChartsWeek(chart){
             
             dataGet=data;
             dataGet.weekChart=true;
-            console.log(dataGet);
              var ctxweek = $("#weekChart").get(0).getContext("2d");
               salesChartweek = new Chart(ctxweek).Line(dataWeek, {
                 bezierCurve: false,
@@ -225,7 +280,6 @@ function ShowChartsWeek(chart){
           
             dataGet=dataCompare;
             dataGet.weekChart=false;
-               console.log(dataGet);
                var ctxweek2 = $("#weekChartCompare").get(0).getContext("2d");
             
            
@@ -235,8 +289,8 @@ function ShowChartsWeek(chart){
             });
         }
         dataGet.date='Nov';
-        console.log(dataGet.weekChart);
-        $.ajaxq("QueueChart",{
+        
+        $.ajaxq("QueueCharts",{
                 url: 'api/BBVA/consumptionPattern',
                 dataType:'json',
                 
@@ -284,13 +338,13 @@ function showInfoBBVA(json,chart){
                 datasets: [
                     {
                         label: "My First dataset",
-                        fillColor: "rgba(220,220,220,0.2)",
-                        strokeColor: "rgba(220,220,220,1)",
-                        pointColor: "rgba(155,89,22,1)",
+                        fillColor: "#84DEC5",
+                        strokeColor: "#84DEC5",
+                        pointColor: "#84DEC5",
                         pointStrokeColor: "#fff",
                     
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        pointHighlightFill: "#84DEC5",
+                        pointHighlightStroke: "#84DEC5",
                         data:num_payments
                     },
                 ]
@@ -315,7 +369,7 @@ function showInfoBBVA(json,chart){
                     var canvas=document.getElementById('salesChart');
             canvas.onclick=function(evt){
                 var activePoints = chartSales.getPointsAtEvent(evt);
-                 updateChartGender('genderChart',activePoints[0]);
+                 updateSalesChartGender('genderChart',activePoints[0]);
                  updateSalesChart('salesChart',activePoints[0]);
                  
 
@@ -337,7 +391,7 @@ function showInfoBBVA(json,chart){
                  var canvasCompare=document.getElementById('salesChartCompare');
             canvasCompare.onclick=function(evt){
                 var activePoints = chartSalesCompare.getPointsAtEvent(evt);
-                 updateChartGender('genderChartCompare',activePoints[0]);
+                 updateSalesChartGender('genderChartCompare',activePoints[0]);
                  updateSalesChart('salesChartweek',activePoints[0]);
                 
 
@@ -352,10 +406,10 @@ function showInfoMap(json,map){
                             setTimeout(function(){ mapC.invalidateSize()}, 1500);
                             $.each(json,function(index){
                                     if(index==0){
-                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapC','CC22FF');
+                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapC','84DEC5');
                                     }
                                     else{
-                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapC','ff1111');
+                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapC','FF0000');
                                     }
                             });
                         }
@@ -365,20 +419,22 @@ function showInfoMap(json,map){
                             setTimeout(function(){ mapCompare.invalidateSize()}, 1500);
                             $.each(json,function(index){
                                     if(index==0){
-                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapCompare','CC22FF');
+                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapCompare','84DEC5');
                                     }
                                     else{
-                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapCompare','ff1111');
+                                        drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapCompare','FF0000');
                                     }
                             });
 
                         }
 }
-function drawMarker(name,lat,ln,map,color){
+function drawMarker(name,lat,ln,map,color,size){
                         if(map=='mapC'){
                             marker = L.marker([lat, ln], {
                                                 icon: L.mapbox.marker.icon(
-                                                    {'marker-color': color}
+                                                    {'marker-color': color
+                                                     
+                                                    }
 
                                                     )
                             });                  
@@ -388,7 +444,8 @@ function drawMarker(name,lat,ln,map,color){
                         else{
                                 marker = L.marker([lat, ln], {
                                                 icon: L.mapbox.marker.icon(
-                                                    {'marker-color': color}
+                                                    {'marker-color': color  
+                                                    }
 
                                                     )
                             });                  
@@ -461,15 +518,14 @@ function SendInfoSetup(place){
                 success:function(json){
                     if(isMapC){
                             showInfoBBVA(json,'salesChart');
-                            ShowChartsGender('genderChart');
                             ShowChartsWeek('weekChart');
+                            ShowChartsGender('genderChart');
                         }
                   
                     else{
-                    
                       showInfoBBVA(json,'salesChartCompare');
-                      ShowChartsGender('genderChartCompare');
                       ShowChartsWeek('weekChartCompare');
+                       ShowChartsGender('genderChartCompare');
                     
 
                        
@@ -488,17 +544,6 @@ function initializeButtons(){
             $(this).addClass('icon btn btn-primary btn-lg');
     });
 }
-function fillGridCategories(){
-		datasource=
-				$.ajax({
-                url: 'api/BBVA/Categories',
-                dataType:'json',
-                type: 'get',
-                success:function(dataSource){
-                     
-                }
-            });
-}
 function initializeFuelux(){
 	   $('#myWizard').wizard();
 }
@@ -514,14 +559,14 @@ function initializeMapCompetencia(map){
 }
 function initializeMapBox(){
                         L.mapbox.accessToken = 'pk.eyJ1IjoibHUxenp6IiwiYSI6Imp0RnFuRm8ifQ.7oDrxlos9T1R3_RqKHyshQ';
-                        map = L.mapbox.map('map','examples.map-i86nkdio').setView([19.41, -99.14], 15);
+                        map = L.mapbox.map('map','examples.map-i86nkdio').setView([19.412367888315664, -99.16139602661131], 14);
                         map.zoom=15;                      
-                        marker = L.marker([19.41, -99.14], {
-                                            icon: L.mapbox.marker.icon({'marker-color': 'ff8888'}),
+                        marker = L.marker([19.426367888315664, -99.16139602661131], {
+                                            icon: L.mapbox.marker.icon({'marker-color': '84DEC5'}),
                                             draggable: true
                         });
-                        markerCompare=L.marker([19.41, -99.15], {
-                                            icon: L.mapbox.marker.icon({'marker-color': '8811CC','marker-symbol': 'bus',}),
+                        markerCompare=L.marker([19.408882974361152, -99.17139602661131], {
+                                            icon: L.mapbox.marker.icon({'marker-color': '84DEC5'}),
                                             draggable: true
                         });
 

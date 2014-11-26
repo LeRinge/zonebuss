@@ -126,7 +126,6 @@ class APIBBVAController extends \BaseController {
 		$dataJson=$json['data']['stats'];
 		$dataFinal=array();
 		$num_payments=0;
-		Log::info($dataJson);
 
 		$max=0;
 		
@@ -143,6 +142,18 @@ class APIBBVAController extends \BaseController {
 
 	}
 	public function cardCube(){
+		 
+		 $ages=array(
+		 				'0'=>'<=18',
+		 				'1'=>'19-25',
+		 				'2'=>'26-35',
+		 				'3'=>'36-45',
+		 				'4'=>'46-55',
+		 				'5'=>'56-65',
+		 				'6'=>'>=66'
+
+
+		 			);
 		$data=array(
 			'category' =>Input::get('category'),
 			'lat'=> Input::get('lat'),
@@ -187,25 +198,67 @@ class APIBBVAController extends \BaseController {
 		$percentageM=0;
 		$percentageF=0;
 		$percentageU=0;
+		$maxH=null;
+		$hashMaxH='';
+		$avgMaxH=0;
+		$maxF=null;
+		$hashMaxF='';
+		$avgMaxF=0;
+		$RangeM ='';
+		$RangeF ='';
 		foreach ($dataJson as $item) {
-				if(substr($item['hash'],0,1)=='M'){
-					$percentageM+=$item['num_payments'];
-				} elseif (substr($item['hash'],0,1)=='F') {
-					$percentageF+=$item['num_payments'];
+				foreach ($item['cube'] as $itemCube) {
+					if(substr($itemCube['hash'],0,1)=='M' && substr($itemCube['hash'],2,1)!='U'){
+						$percentageM+=$itemCube['num_payments'];
+						if($maxH === null){ 
+							$maxH = $itemCube['num_payments'];
+							$hashMaxH =$itemCube['hash'];
+							$avgMaxH=$itemCube['avg'];
+							$RangeM = $ages[substr($itemCube['hash'],2,1)]; 
+						}
+						else{ 
+								$maxH = max($maxH, $itemCube['num_payments']);
+								if($maxH==$itemCube['num_payments']){
+									$hashMaxH =$itemCube['hash'];
+									$avgMaxH = $itemCube['avg'];
+									$RangeM = $ages[substr($itemCube['hash'],2,1)];  
+								}
+							}
+					} elseif (substr($itemCube['hash'],0,1)=='F' && substr($itemCube['hash'],2,1)!='U') {
+						$percentageF+=$itemCube['num_payments'];
+						if($maxF === null){ 
+							$maxF = $itemCube['num_payments'];
+							$hashMaxF =$itemCube['hash'];
+							$avgMaxF=$itemCube['avg'];
+							$RangeF = $ages[substr($itemCube['hash'],2,1)]; 
+						}
+						else{ 
+								$maxF = max($maxF, $itemCube['num_payments']);
+								if($maxF==$itemCube['num_payments']){
+									$hashMaxF =$itemCube['hash'];
+									$avgMaxF = $itemCube['avg'];
+									$RangeF = $ages[substr($itemCube['hash'],2,1)]; 
+								}
+							}
+					} else{
+						$percentageU+=$itemCube['num_payments'];
+					}
 				}
-				else{
-						$percentageU+=$item['num_payments'];
-				}
+				
 		}
-
-		
-
-
-		return json_encode(array('M'=>$percentageM,
-								 'F'=>$percentageF,
-								 'U'=>$percentageU
-								 )
-							);
+		return Response::json(array(
+								'M'=>array(
+								 'percentage'=>$percentageM,
+								 'Max'=>$maxH,
+								 'Avg'=>$avgMaxH,
+								 'Range'=>$RangeM,
+								 ),
+								'F'=>array(
+								'percentage'=>$percentageF,
+								 'Max'=>$maxF,
+								 'Avg'=>$avgMaxF,
+								 'Range'=>$RangeF,)
+						));
 
 	}
 
@@ -237,7 +290,6 @@ class APIBBVAController extends \BaseController {
 		$dataJson=$json['data']['stats'];
 		$dataFinal=array();
 		$num_payments=0;
-		Log::info($dataJson);
 		foreach ($dataJson as $item) {
 				foreach ($item['histogram'] as $item2 ) {
 						$num_payments+=$item2['num_payments'];
