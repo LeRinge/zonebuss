@@ -99,24 +99,38 @@ class APIBBVAController extends \BaseController {
 		$query = $request->getQuery();
 		$query->set('category', $data['category']);
 		$query->set('group_by','month');
+		$month='';
+		$year ='';
 		if($data['date']=='Nov'){
 			$query->set('date_min','20131101');
 			$query->set('date_max','20131130');
+			$month='Noviembre';
+			$year ='2013';
 		} elseif ($data['date']=='Dic') {
 			$query->set('date_min','20131201');
 			$query->set('date_max','20131231');
+			$month='Diciembre';
+			$year ='2013';
 		} elseif ($data['date']=='Ene') {
 			$query->set('date_min','20140101');
 			$query->set('date_max','20140131');
+			$month='Enero';
+			$year ='2014';
 		} elseif ($data['date']=='Feb') {
 			$query->set('date_min','20140201');
 			$query->set('date_max','20140228');
+			$month='Febrero';
+			$year ='2014';
 		} elseif ($data['date']=='Mar') {
 			$query->set('date_min','20140301');
 			$query->set('date_max','20140331');
+			$month='Marzo';
+			$year ='2014';
 		} elseif ($data['date']=='Abr') {
 			$query->set('date_min','20140401');
 			$query->set('date_max','20140430');
+			$month='Abril';
+			$year ='2014';
 		} 
 
 		$request-> setHeader("Authorization",$APP_ID_BASE64);
@@ -133,7 +147,9 @@ class APIBBVAController extends \BaseController {
 				foreach ($item['days'] as  $item2) {
 						array_push($dataFinal,array('day' =>  $item2['day'],
 													'num_payments'=> $item2['num_payments'],
-													'avg'=>$item2['avg']
+													'avg'=>$item2['avg'],
+													'month'=>$month,
+													'year'=>$year
 													));
 				}
 					$max=0;
@@ -170,24 +186,38 @@ class APIBBVAController extends \BaseController {
 		$query = $request->getQuery();
 		$query->set('category', $data['category']);
 		$query->set('group_by','month');
+		$month='';
+		$year ='';
 		if($data['date']=='Nov'){
 			$query->set('date_min','20131101');
 			$query->set('date_max','20131130');
+			$month='Noviembre';
+			$year ='2013';
 		} elseif ($data['date']=='Dic') {
 			$query->set('date_min','20131201');
 			$query->set('date_max','20131231');
+			$month='Diciembre';
+			$year ='2013';
 		} elseif ($data['date']=='Ene') {
 			$query->set('date_min','20140101');
 			$query->set('date_max','20140131');
+			$month='Enero';
+			$year ='2014';
 		} elseif ($data['date']=='Feb') {
 			$query->set('date_min','20140201');
 			$query->set('date_max','20140228');
+			$month='Febrero';
+			$year ='2014';
 		} elseif ($data['date']=='Mar') {
 			$query->set('date_min','20140301');
 			$query->set('date_max','20140331');
+			$month='Marzo';
+			$year ='2014';
 		} elseif ($data['date']=='Abr') {
 			$query->set('date_min','20140401');
 			$query->set('date_max','20140430');
+			$month='Abril';
+			$year ='2014';
 		} 
 		$request-> setHeader("Authorization",$APP_ID_BASE64);
 		$request-> setHeader("Accept-Language",'ES');
@@ -252,12 +282,17 @@ class APIBBVAController extends \BaseController {
 								 'Max'=>$maxH,
 								 'Avg'=>$avgMaxH,
 								 'Range'=>$RangeM,
+								 'month'=>$month,
+								  'year'=>$year
 								 ),
 								'F'=>array(
 								'percentage'=>$percentageF,
 								 'Max'=>$maxF,
 								 'Avg'=>$avgMaxF,
-								 'Range'=>$RangeF,)
+								 'Range'=>$RangeF,
+								 'month'=>$month,
+								 'year'=>$year
+								 )
 						));
 
 	}

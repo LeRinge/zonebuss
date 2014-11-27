@@ -100,13 +100,13 @@
             </div>
         </div>
     </section>
-    <!-- Footer -->
+   <!-- Footer -->
     <footer>
+      
         <div class="container text-center">
-            <p>C&copy; Zonebuss 2014</p>
+            <p class="description">BBVA innova challege 2014</p>
         </div>
     </footer>
-   
     
 	
     <!-- jQuery -->

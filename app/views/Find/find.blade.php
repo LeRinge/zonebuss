@@ -292,147 +292,189 @@
    
 
     <section id="charts" class="chartBack" style="display:none">
+        <div class="row">
+            <div  class="col-md-4 col-md-offset-1 text-center">
+                <h5><span class="descriptionDirecction"></span></h5>
+             </div>
+             <div  class="col-md-2">
+                <h5><span  class="descriptionResumen">Resumen</span></h5>
+             </div>
+             <div  class="col-md-4 text-center">
+                <h5><span class="descriptionDirecction"></span></h5>
+             </div>      
+        </div>
         <div id="direcctions" class="row">
              <div  class="col-md-4 col-md-offset-1 text-center">
                 <h5><span id="direccion" class="descriptionDirecction"></span></h5>
              </div>
              <div  class="col-md-2">
-
+                
              </div>
              <div  class="col-md-4 text-center">
                 <h5><span id="direccionCompare" class="descriptionDirecction"></span></h5>
              </div>      
         </div>
+         <div class="row">
+            <div  class="col-md-4 col-md-offset-1">
+                 <h5><span id="direccion" class="descriptionDirecction">Existen al menos en esta zona</span></h5><h5><span id="competidores" class="descriptionDirecction"></span></h5>
+             </div>
+             <div  class="col-md-2">
+                     
+             </div>
+             <div  class="col-md-4 ">
+                   <h5><span id="direccion" class="descriptionDirecction">Existen al menos en esta zona</span></h5><h5><span id="competidoresCompare" class="descriptionDirecction"></span></h5>
+             </div>
+        </div>    
         <div id="maps" class="row top-bufferCharts">
 
             <div  class="col-md-4 col-md-offset-1">
                 <div class="mapC" id="mapC" ></div>
             </div>
              <div  class="col-md-2">
-             
+               
              </div>
              <div  class="col-md-4">
                 <div class="mapC" id="mapCompare" ></div>
              </div>
         </div>
+         <div class="row">
+            <div  class="col-md-4 col-md-offset-1">
+                 <h5><span id="direccion" class="descriptionDirecction">Ventas totales  en el mes de</span></h5><h5><span id="mesGender" class="descriptionDirecction"></span></h5>
+             </div>
+             <div  class="col-md-2">
+                     
+             </div>
+             <div  class="col-md-4 ">
+                   <h5><span id="direccion" class="descriptionDirecction">Ventas totales en el mes de</span></h5><h5><span id="mesGenderCompare" class="descriptionDirecction"></span></h5>
+             </div>
+        </div>    
         <div id="genderCharts" class="row top-bufferCharts">
             <div class="row">
              <div  class="col-md-4 col-md-offset-1">
                     <canvas id="genderChart" ></canvas>
              </div>
 
-             <div  class="col-md-2">
+             <div  class="col-md-2 top-buffer">
+                    
              </div>
             <div  class="col-md-4">
                     <canvas id="genderChartCompare" ></canvas>
              </div>
 
             </div>
-            <div class="row">
+            <div class="row top-bufferCharts">
                 <div  class="col-md-4 col-md-offset-1">
-                    
+                    <table class="table" style="background-color:rgba(132,222,197,0.5)">
+                        <thead>
+                                <tr>
+                                <th></th>  
+                                 <th><h5><span class="descriptionLabels">Genero<span></th>
+                                 <th> <h5><span class="descriptionLabels">Rango edad<span></th>
+                                 <th> <h5><span class="descriptionLabels">Promedio compra<span></th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td> 
+                                <td><img src="../img/men.png" alt="32x32"></td>
+                                <td> <h5><span id="RangoH" class="descriptionLabels"></span></h5></td>
+                                <td> <h5><span id="AvgH" class="descriptionLabels"></span></h5></td>
+                            </tr>
+                            <tr>
+                                 <td></td> 
+                                <td> <img src="../img/woman.png" alt="32x32"></td>
+                                <td> <h5><span id="RangoF" class="descriptionLabels"></span></h5></td>
+                                <td>  <h5><span id="AvgF" class="descriptionLabels"></span></h5></td>
+                            </tr>
+                        </tbody>    
+                    </table>
 
-                    <div class="row">
-                         <div  class="col-md-3">
-                            <h5><span>Genero<span>
-                         </div>
-                         <div  class="col-md-3">
-                                
-                         </div>
-                          <div  class="col-md-3">
-                               
-                         </div>
-                        
-                    </div>
-                    <div class="row top-bufferChartsGender">
-                         <div  class="col-md-3">
-                                <img src="../img/men.png" alt="32x32">
-                         </div>
-                         <div  class="col-md-3">
-                               <h5><span id="RangoH" class="label label-info"></span></h5>
-                         </div>
-                          <div class="col-md-3">
-                                <h5><span id="AvgH" class="label label-info"></span></h5>
-                         </div>
-                        
-                    </div>
-                    <div class="row">
-                         <div  class="col-md-3">
-                                <img src="../img/woman.png" alt="32x32">
-                         </div>
-                         <div  class="col-md-3">
-                                 <h5><span id="RangoF" class="label label-info"></span></h5>
-                         </div>
-                          <div class="col-md-3">
-                                   <h5><span id="AvgF" class="label label-info"></span></h5>
-                         </div>
-                        
-                    </div>
+                  
                  </div>   
                 <div  class="col-md-2">
                 </div>
                 <div  class="col-md-4">
-                    <div class="row">
-                         <div  class="col-md-3">
-                            <h5><span>Genero<span>
-                         </div>
-                         <div  class="col-md-3">
-                                 
-                         </div>
-                          <div  class="col-md-3">
-                                
-                         </div>
-                    </div>
-                    <div class="row top-bufferChartsGender">
-                         <div  class="col-md-3">
-                                <img src="../img/men.png" alt="32x32">
-                         </div>
-                         <div  class="col-md-3">
-                               <h5><span id="RangoHCompare" class="label label-info"></span></h5>
-                         </div>
-                          <div class="col-md-3">
-                                <h5><span id="AvgHCompare" class="label label-info"></span></h5>
-                         </div>
-                        
-                    </div>
-                    <div class="row">
-                         <div  class="col-md-3">
-                                <img src="../img/woman.png" alt="32x32">
-                         </div>
-                         <div  class="col-md-3">
-                                 <h5><span id="RangoFCompare" class="label label-info"></span></h5>
-                         </div>
-                          <div class="col-md-3">
-                                <h5><span id="AvgFCompare" class="label label-info"></span></h5>
-                         </div>
-                        
-                    </div>
+                     <table class="table" style="background-color:rgba(132,222,197,0.5)">
+                        <thead>
+                                <tr>
+                                <th></th>  
+                                 <th><h5><span class="descriptionLabels">Genero<span></th>
+                                 <th> <h5><span class="descriptionLabels">Rango edad<span></th>
+                                 <th> <h5><span class="descriptionLabels">Promedio compra<span></th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td> 
+                                <td><img src="../img/men.png" alt="32x32"></td>
+                                <td> <h5><span id="RangoHCompare" class="descriptionLabels"></span></h5></td>
+                                <td> <h5><span id="AvgHCompare" class="descriptionLabels"></span></h5></td>
+                            </tr>
+                            <tr>
+                                 <td></td> 
+                                <td> <img src="../img/woman.png" alt="32x32"></td>
+                                <td> <h5><span id="RangoFCompare" class="descriptionLabels"></span></h5></td>
+                                <td>  <h5><span id="AvgFCompare" class="descriptionLabels"></span></h5></td>
+                            </tr>
+                        </tbody>    
+                    </table>
                 </div>  
             </div>
         </div>
-        <div id="salesCharts" class="row top-bufferCharts">
+        <div class="row">
             <div  class="col-md-4 col-md-offset-1">
-                <canvas id="salesChart"></canvas>
+                 <h5><span id="direccion" class="descriptionDirecction">Numero de ventas totales por mes en el periodo Nov 2013 a Abril 2014</span></h5><h5>
              </div>
              <div  class="col-md-2">
-
+                     
              </div>
              <div  class="col-md-4 ">
-                <canvas id="salesChartCompare" ></canvas>
-             </div> 
+                  <h5><span id="direccion" class="descriptionDirecction">Numero de ventas totales por mes en el periodo Nov 2013 a Abril 2014</span></h5>
+             </div>
+        </div>     
+            <div id="salesCharts" class="row top-bufferCharts">
+            
+            
+
+                <div  class="col-md-4 col-md-offset-1">
+                    <canvas id="salesChart"></canvas>
+                 </div>
+                 <div  class="col-md-2">
+                         
+                 </div>
+                 <div  class="col-md-4 ">
+                    <canvas id="salesChartCompare" ></canvas>
+                 </div> 
         </div>   
+
+        <div class="row">
+            <div  class="col-md-4 col-md-offset-1">
+                 <h5><span id="direccion" class="descriptionDirecction">Ventas totales por dia para el mes de </span></h5><h5><span id="diaWeek" class="descriptionDirecction"></span></h5>
+             </div>
+             <div  class="col-md-2">
+                     
+             </div>
+             <div  class="col-md-4 ">
+                   <h5><span id="direccion" class="descriptionDirecction">Ventas totales por dia para el mes de </span></h5><h5><span id="diaWeekCompare" class="descriptionDirecction"></span></h5>
+             </div>
+        </div>  
          <div id="weekCharts" class="row top-bufferCharts">
             <div  class="col-md-4 col-md-offset-1">
                 <canvas id="weekChart" ></canvas>
              </div>
              <div  class="col-md-2">
-
              </div>
              <div  class="col-md-4 ">
                 <canvas id="weekChartCompare" ></canvas>
              </div> 
         </div>   
-    
+    <!-- Footer -->
+    <footer>
+      
+        <div class="container text-center">
+            <p class="description">BBVA innova challege 2014</p>
+        </div>
+    </footer>
 
     </section>
 

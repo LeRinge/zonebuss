@@ -23,6 +23,10 @@ $(document).ready(function(){
              initializeFuelux();
              initializeButtons();
              Chart.defaults.global.responsive = true;
+              Chart.defaults.global.scaleFontColor="#fff";
+
+
+
 
            
              $('#myWizard').on('actionclicked.fu.wizard', function (evt, data) {
@@ -100,6 +104,8 @@ function updateChartWeek(json,chart){
                          num_payments.push(entry['num_payments']);
                     }
             });
+
+
         if(chart=='salesChartweek'){
             for(i=0;i<7;i++){
              salesChartweek.datasets[0].points[i].value = num_payments[i];
@@ -109,29 +115,39 @@ function updateChartWeek(json,chart){
                   
             });
         salesChartweek.update();
+        $('#diaWeek').text(json[0]['month']);
+        $('#diaWeek').css("color", "red");
+       
     }
     else{
          for(i=0;i<7;i++){
              salesChartweekCompare.datasets[0].points[i].value = num_payments[i];
        }
         salesChartweekCompare.update();
+        $('#diaWeekCompare').text(json[0]['month']);
+        $('#diaWeekCompare').css("color", "red");
+         
     }
 
 }
 function updateInfoGender(json,chart){
-console.log(json);
     if(chart=='genderChart'){
         $('#RangoH').text(json['M']['Range']);
         $('#AvgH').text(json['M']['Avg']);
         $('#RangoF').text(json['F']['Range']);
         $('#AvgF').text(json['F']['Avg']);
+        $('#mesGender').text(json['M']['month']);
+        $('#mesGender').css("color", "red");
     }
     else{
         $('#RangoHCompare').text(json['M']['Range']);
         $('#AvgHCompare').text(json['M']['Avg']);
         $('#RangoFCompare').text(json['F']['Range']);
         $('#AvgFCompare').text(json['F']['Avg']);
+        $('#mesGenderCompare').text(json['M']['month']);
+        $('#mesGenderCompare').css("color", "red");
     }
+
 
 }
 function updateChartGender(json,chart){
@@ -250,14 +266,14 @@ function ShowChartsWeek(chart){
               labels: ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab","Dom"],
                 datasets: [
                     {
-                        label: "weekChart",
-                        fillColor: "#84DEC5",
+                       label: "weekChart",
+                        fillColor :"rgba(132,222,197,0.5)",
                         strokeColor: "#84DEC5",
                         pointColor: "#84DEC5",
                         pointStrokeColor: "#84DEC5",
                     
-                        pointHighlightFill: "#84DEC5",
-                        pointHighlightStroke: "#84DEC5",
+                        pointHighlightFill: "#000",
+                        pointHighlightStroke: "#000",
                         data:[0,0,0,0,0,0,0]
                     },
                 ]
@@ -271,7 +287,10 @@ function ShowChartsWeek(chart){
             dataGet.weekChart=true;
              var ctxweek = $("#weekChart").get(0).getContext("2d");
               salesChartweek = new Chart(ctxweek).Line(dataWeek, {
-                bezierCurve: false,
+                 bezierCurve: true,
+                        scaleGridLineWidth : 5,
+                        pointDotRadius : 7,
+                        datasetFill : false
 
             });
         
@@ -284,7 +303,10 @@ function ShowChartsWeek(chart){
             
            
             salesChartweekCompare = new Chart(ctxweek2).Line(dataWeek, {
-                bezierCurve: false,
+                bezierCurve: true,
+                        scaleGridLineWidth : 5,
+                        pointDotRadius : 7,
+                        datasetFill : false
 
             });
         }
@@ -338,13 +360,13 @@ function showInfoBBVA(json,chart){
                 datasets: [
                     {
                         label: "My First dataset",
-                        fillColor: "#84DEC5",
+                        fillColor :"rgba(132,222,197,0.5)",
                         strokeColor: "#84DEC5",
                         pointColor: "#84DEC5",
-                        pointStrokeColor: "#fff",
+                        pointStrokeColor: "#84DEC5",
                     
-                        pointHighlightFill: "#84DEC5",
-                        pointHighlightStroke: "#84DEC5",
+                        pointHighlightFill: "#000",
+                        pointHighlightStroke: "#000",
                         data:num_payments
                     },
                 ]
@@ -358,12 +380,13 @@ function showInfoBBVA(json,chart){
                     var ctx = $("#salesChart").get(0).getContext("2d");
                      chartSales = new Chart(ctx).Line(dataSales, {
                         bezierCurve: true,
-                        scaleGridLineWidth : 0,
+                        scaleGridLineWidth : 5,
                         pointDotRadius : 7,
                         scaleOverride : true,
-                        scaleSteps :scaleSteps ,
+                        scaleSteps :scaleSteps,
                         scaleStepWidth : 1000,
-                        scaleStartValue : 0
+                        scaleStartValue : 0,
+                        datasetFill : false
 
                 });
                     var canvas=document.getElementById('salesChart');
@@ -379,13 +402,14 @@ function showInfoBBVA(json,chart){
         else{
                  var ctx2 = $("#salesChartCompare").get(0).getContext("2d");
                   chartSalesCompare = new Chart(ctx2).Line(dataSales, {
-                    bezierCurve: true,
-                    scaleGridLineWidth : 0,
-                    pointDotRadius : 7,
-                    scaleOverride : true,
-                      scaleSteps : scaleSteps,
-                      scaleStepWidth : 1000,
-                      scaleStartValue : 0
+                        bezierCurve: true,
+                        scaleGridLineWidth : 5,
+                        pointDotRadius : 7,
+                        scaleOverride : true,
+                        scaleSteps :scaleSteps,
+                        scaleStepWidth : 1000,
+                        scaleStartValue : 0,
+                        datasetFill : false
 
                 });
                  var canvasCompare=document.getElementById('salesChartCompare');
@@ -407,9 +431,13 @@ function showInfoMap(json,map){
                             $.each(json,function(index){
                                     if(index==0){
                                         drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapC','84DEC5');
+                                        $('#competidores').text(json[index]['competitors']+' competidores' );
+                                          $('#competidores').css("color", "red");
+
                                     }
                                     else{
                                         drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapC','FF0000');
+                                       
                                     }
                             });
                         }
@@ -420,6 +448,9 @@ function showInfoMap(json,map){
                             $.each(json,function(index){
                                     if(index==0){
                                         drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapCompare','84DEC5');
+                                         $('#competidoresCompare').text(json[index]['competitors']+' competidores' );
+                                          $('#competidoresCompare').css("color", "red");
+
                                     }
                                     else{
                                         drawMarker(json[index].name,json[index].latitude,json[index].longitude,'mapCompare','FF0000');

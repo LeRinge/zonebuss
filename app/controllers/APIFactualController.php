@@ -19,7 +19,8 @@ class APIFactualController extends \BaseController {
 		
 		$factual = new Factual($OAUTH_KEY_FACTUAL,$OAUTH_SECRECT_FACTUAL);
 		$query = new FactualQuery;
-    	$query->limit(20);
+    	$query->limit(30);
+    	$query->includeRowCount();
     	$query->only("name,latitude,longitude");
     	$query->within(new FactualCircle($data['lat'],$data['lng'], 550));
     	$query->field("category_ids")->includesAny(array_values($codes));
@@ -31,8 +32,10 @@ class APIFactualController extends \BaseController {
     	array_push($resJsonArray,array('latitude' => $data['lat'],
     									'longitude' => $data['lng'],
     									'name' => 'Your place',
-    									'$distance' => 0
+    									'distance' => 0,
+    									'competitors' => $res->getTotalRowCount(),
     									));
+
     	$dataFinal=array_merge($resJsonArray,json_decode($resJson));
 		return json_encode($dataFinal);
 

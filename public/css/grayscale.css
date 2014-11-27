@@ -28,7 +28,51 @@ p {
     font-size: 18px;
     line-height: 1.5;
 }
-
+@media screen and (max-width: 567px) {
+        .descriptionDirecction {
+            font-size:12px;
+    }
+    .descriptionResumen {
+            font-size:18px;
+    }
+    .descriptionLabels {
+            font-size:9px;
+    }
+}
+@media screen and (min-width: 568px) {
+        .descriptionDirecction {
+            font-size:12px;
+    }
+    .descriptionResumen {
+            font-size:18px;
+    }
+    .descriptionLabels {
+            font-size:9px;
+    }
+    
+}
+@media screen and (min-width: 767px) {
+       .descriptionDirecction {
+            font-size:18px;
+    }
+    .descriptionResumen {
+            font-size:24px;
+    }
+    .descriptionLabels {
+            font-size:12px;
+    }
+}
+@media screen and (min-width: 1199px) {
+        .descriptionDirecction {
+            font-size:24px;
+    }
+    .descriptionResumen {
+            font-size:40px;
+    }
+    .descriptionLabels {
+            font-size:16px;
+    }
+}
 @media(min-width:767px) {
     p {
         margin: 0 0 35px;
@@ -66,9 +110,18 @@ a:focus {
 }
 .descriptionDirecction {
     margin-bottom: 0;
-    font-size: 24px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #84DEC5;
+    color: #000;
+}
+.descriptionResumen {
+    margin-bottom: 0;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #000;
+}
+.descriptionLabels {
+    margin-bottom: 0;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #000;
 }
 .descriptionTitleBig{
     margin-bottom: 15px;
@@ -344,6 +397,7 @@ ul.banner-social-buttons {
     ul.banner-social-buttons {
         margin-top: 15px;
     }
+
 }
 
 @media(max-width:767px) {
