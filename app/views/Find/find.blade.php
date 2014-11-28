@@ -33,6 +33,9 @@
           .map { position: relative;float: left;width:100%; height: 480px; }
           .mapC { position: relative;float: left;width:100%; height: 360px; }
           .centered img { display: inline; }
+          .borderless tbody tr td, .borderless thead tr th {
+    border: none;
+}
      </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -297,7 +300,7 @@
                 <h5><span class="descriptionDirecction"></span></h5>
              </div>
              <div  class="col-md-2">
-                <h5><span  class="descriptionResumen">Resumen</span></h5>
+                <h5><span  class="descriptionResumen">RESUMEN</span></h5>
              </div>
              <div  class="col-md-4 text-center">
                 <h5><span class="descriptionDirecction"></span></h5>
@@ -362,6 +365,40 @@
              </div>
 
             </div>
+              <div class="row">
+                 <div  class="col-md-4 col-md-offset-1">
+                     <table class="table borderless">
+                        <tbody>
+                            <tr>
+                                <td bgcolor="#16A6ED"></td> 
+                                <td> <h5><span class="descriptionLabels">Hombres</span></h5></td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#E80085"></td> 
+                                <td> <h5><span class="descriptionLabels">Mujeres</span></h5></td>
+                            </tr>
+                        </tbody>    
+                    </table>
+                 </div>
+                 <div  class="col-md-2 top-buffer">
+                 </div>
+                 <div  class="col-md-4 col-md-offset-1">
+                  <table class="table borderless">
+                        <tbody>
+                            <tr>
+                                <td bgcolor="#16A6ED"></td> 
+                                <td> <h5><span class="descriptionLabels">Hombres</span></h5></td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#E80085"></td> 
+                                <td> <h5><span class="descriptionLabels">Mujeres</span></h5></td>
+                            </tr>
+                        </tbody>    
+                    </table>
+                 </div>
+
+
+            </div>
             <div class="row top-bufferCharts">
                 <div  class="col-md-4 col-md-offset-1">
                     <table class="table" style="background-color:rgba(132,222,197,0.5)">
@@ -375,13 +412,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td></td> 
+                                <td ></td> 
                                 <td><img src="../img/men.png" alt="32x32"></td>
                                 <td> <h5><span id="RangoH" class="descriptionLabels"></span></h5></td>
                                 <td> <h5><span id="AvgH" class="descriptionLabels"></span></h5></td>
                             </tr>
                             <tr>
-                                 <td></td> 
+                                 <td ></td>  
                                 <td> <img src="../img/woman.png" alt="32x32"></td>
                                 <td> <h5><span id="RangoF" class="descriptionLabels"></span></h5></td>
                                 <td>  <h5><span id="AvgF" class="descriptionLabels"></span></h5></td>
@@ -405,13 +442,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td></td> 
+                                 <td ></td> 
                                 <td><img src="../img/men.png" alt="32x32"></td>
                                 <td> <h5><span id="RangoHCompare" class="descriptionLabels"></span></h5></td>
                                 <td> <h5><span id="AvgHCompare" class="descriptionLabels"></span></h5></td>
                             </tr>
                             <tr>
-                                 <td></td> 
+                                  <td ></td>  
                                 <td> <img src="../img/woman.png" alt="32x32"></td>
                                 <td> <h5><span id="RangoFCompare" class="descriptionLabels"></span></h5></td>
                                 <td>  <h5><span id="AvgFCompare" class="descriptionLabels"></span></h5></td>
@@ -420,9 +457,29 @@
                     </table>
                 </div>  
             </div>
+
         </div>
+         <div class="row">
+            <div  class="col-md-4 col-md-offset-1">
+                 
+                <div class="alert alert-info">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>Nota!</strong> Para obtener mas infomacion del mes, haz click sobre un punto sobre la grafica.
+                </div>
+             </div>
+             <div  class="col-md-2">
+                     
+             </div>
+             <div  class="col-md-4 ">
+                 <div class="alert alert-info">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>Nota!</strong> Para obtener mas infomacion del mes,   haz click sobre un punto sobre la grafica.
+                </div>
+             </div>
+        </div>     
         <div class="row">
             <div  class="col-md-4 col-md-offset-1">
+                 
                  <h5><span id="direccion" class="descriptionDirecction">Numero de ventas totales por mes en el periodo Nov 2013 a Abril 2014</span></h5><h5>
              </div>
              <div  class="col-md-2">

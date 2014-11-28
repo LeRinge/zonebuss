@@ -135,25 +135,54 @@ class APIBBVAController extends \BaseController {
 
 		$request-> setHeader("Authorization",$APP_ID_BASE64);
 		$request-> setHeader("Accept-Language",'ES');
-		$response = $client->send($request);
+		try {
+    		$response = $client->send($request);
+		} catch (ClientException $e) {
+		    Log::info($e->getResponse());
+		}
 		$json = $response->json();
 		$dataJson=$json['data']['stats'];
 		$dataFinal=array();
 		$num_payments=0;
+		$arrayDays=array(
+							'Monday' => 'Monday',
+							'Tuesday' => 'Tuesday',
+							'Wednesday' => 'Wednesday',
+							'Thursday' => 'Thursday',
+							'Friday' => 'Friday',
+							'Saturday' => 'Saturday',
+							'Sunday' => 'Sunday',
 
-		$max=0;
+							 );
+		foreach ($arrayDays as $day) {
+			array_push($dataFinal,array(	'day' => $day,
+													'num_payments'=> 0,
+													'avg'=>0,
+													'month'=>0,
+													'year'=>0
+													));
+		}
 		
 		foreach ($dataJson as $item) {
+				
 				foreach ($item['days'] as  $item2) {
-						array_push($dataFinal,array('day' =>  $item2['day'],
-													'num_payments'=> $item2['num_payments'],
-													'avg'=>$item2['avg'],
-													'month'=>$month,
-													'year'=>$year
-													));
+
+						foreach ($dataFinal as $key => $value) {
+						
+							if($value['day'] == $item2['day']){
+								$dataFinal[$key]['num_payments']=$item2['num_payments'];
+								$dataFinal[$key]['avg']=$item2['avg'];
+								$dataFinal[$key]['month']=$month;
+								$dataFinal[$key]['year']=$year;
+
+								break;
+												
+							}
+						}
 				}
-					$max=0;
+					
 		}
+		Log::info($dataFinal);
 		return json_encode($dataFinal);
 
 	}

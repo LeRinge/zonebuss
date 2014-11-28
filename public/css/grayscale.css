@@ -104,6 +104,10 @@ a:focus {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+.about{
+    margin-top: 100px
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 .description {
     margin-bottom: 0;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;

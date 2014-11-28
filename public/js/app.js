@@ -159,12 +159,17 @@ function updateChartGender(json,chart){
                     doughnutgenderChart.segments[0].value = json['M']['percentage'];
                     doughnutgenderChart.segments[1].value = json['F']['percentage'];
                     doughnutgenderChart.update();
+                    var html=doughnutgenderChart.generateLegend();
+                    $('#doughnutgenderChart_legend').innerHTML =  html;
                 }
         else{
             
                     doughnutgenderChartCompare.segments[0].value = json['M']['percentage'];
                     doughnutgenderChartCompare.segments[1].value = json['F']['percentage'];
                     doughnutgenderChartCompare.update();
+                    var html=doughnutgenderChartCompare.generateLegend();
+                    $('#doughnutgenderChartCompare_legend').innerHTML = html;  
+                   
         }
 }
 function updateSalesChartGender(chart,object){
@@ -345,6 +350,7 @@ function showInfoPlace(json,map){
 function showInfoBBVA(json,chart){
    
     var num_payments=[];
+     
     json.forEach(function(entry){
                     
                     if(entry['num_payments']===undefined){
@@ -355,7 +361,7 @@ function showInfoBBVA(json,chart){
                          num_payments.push(entry['num_payments']);
                     }
             });
-    var dataSales = {
+            var dataSales = {
               labels: ["Nov", "Dic", "Ene", "Feb", "Mar", "Abr"],
                 datasets: [
                     {
@@ -371,7 +377,6 @@ function showInfoBBVA(json,chart){
                     },
                 ]
             };
-            
 
             var max=Math.max.apply(Math, num_payments);
             var div=max>1000?1000:100;
@@ -384,7 +389,7 @@ function showInfoBBVA(json,chart){
                         pointDotRadius : 7,
                         scaleOverride : true,
                         scaleSteps :scaleSteps,
-                        scaleStepWidth : 1000,
+                        scaleStepWidth : div,
                         scaleStartValue : 0,
                         datasetFill : false
 
@@ -407,7 +412,7 @@ function showInfoBBVA(json,chart){
                         pointDotRadius : 7,
                         scaleOverride : true,
                         scaleSteps :scaleSteps,
-                        scaleStepWidth : 1000,
+                        scaleStepWidth : div,
                         scaleStartValue : 0,
                         datasetFill : false
 
