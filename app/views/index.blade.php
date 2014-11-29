@@ -78,40 +78,6 @@
             <div class="container">
                 <div class="row top-buffer ">
                     <div class="col-md-8 col-md-offset-2">
-                            <!-- <div id="carousel" class="carousel slide" data-ride="carousel" data-, data-interval="2400">
-                                
-                                  <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                     <li data-target="#carousel-example-generic" data-slide-to="2"</li>
-                                  </ol>
-
-                                
-                                  <div class="carousel-inner" role="listbox">
-                        
-                                    <div class="item active">
-                                      <img src="../img/map2.png" >
-                                      <div class="carousel-caption caption-bottom-right">
-                                        <span class="textcarosel">Encuentra una zona</span>
-                                      </div>
-                                    </div>
-
-                                    <div class="item">
-                                      <img src="../img/commerce2.png" >
-                                      <div class="carousel-caption caption-bottom-right">
-                                        <span class="textcarosel">Elige una categoria</span>
-                                      </div>
-                                    </div>
-                                      <div class="item">
-                                      <img src="../img/chart.png" >
-                                     <div class="carousel-caption caption-bottom-right">
-                                        <span class="textcarosel">Compara con otras zonas</span>
-                                      </div>
-                                    </div>
-                                
-                                  </div>
-                            </div>  
-                            --> 
 
                           <div class="embed-responsive embed-responsive-16by9">
                           <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/oPsKcbX2oyY?rel=0"></iframe>
@@ -161,7 +127,7 @@
             <i class="fa fa-pie-chart fa-stack-1x fa-inverse"></i>
             </span>
             <h4 class="descriptionTitle">Estadisticas</h4>
-            <p class="description">Detecta patrones de consumo actuales a traves de graficas.</p>
+            <p class="description">Detecta patrones de consumo actuales a trav&eacute;s de gr&aacute;ficas.</p>
             </div>
             </div>
             </div>
@@ -177,21 +143,15 @@
     
 	
     <!-- jQuery -->
-    {{ HTML::script('js/jquery.js') }}
+    {{ HTML::script('js/jquery-2.1.1.min.js') }}
 
     <!-- Bootstrap Core JavaScript -->
     
     {{ HTML::script('js/bootstrap.min.js') }}
 
-    <!-- Plugin JavaScript -->
-   
-    {{ HTML::script('js/bootstrap.min.js') }}
-
     <!-- Custom Theme JavaScript -->
   
     {{ HTML::script('js/grayscale.js') }}
-
-    <script type="text/javascript">
 
     
 

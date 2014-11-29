@@ -29,6 +29,10 @@
         }
         
         .carousel-inner > .item > img { margin: 0 auto; }
+        .inner {
+    display: table;
+    margin: 0 auto;
+}
     </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -77,62 +81,43 @@
     <header class="intro">
         <div class="intro-body">
             <div class="container">
-                
-                 <h5><p><span class="about">
-                        Este prototipo de aplicacion web fue creada para el   <br>
-                        lalalalalalaalalaljlkasdlajsdljalskdjalksjdlkajsdlda  <br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                       
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        </span>
-                     </p>
-                </h5>
-                 <h5><p><span class="about">
-                        Este prototipo de aplicacion web fue creada para el   <br>
-                        lalalalalalaalalaljlkasdlajsdljalskdjalksjdlkajsdlda  <br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        </span>
-                     </p>
-                </h5>
-                <h5><p><span class="about">
-                        Este prototipo de aplicacion web fue creada para el   <br>
-                        lalalalalalaalalaljlkasdlajsdljalskdjalksjdlkajsdlda  <br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        lksjdalkjdajsdlkajsdlkjalskdjsalkdjlaksjdlkajslkajsdlk<br>
-                        </span>
-                     </p>
-                </h5>
-                
+                <div class="inner">
+                  <img src="../img/logo.png" >
+                </div>
+                <div class="inner">
+                 <h5><p style="text-align:justify"><span class="about">
+                       ZONEBUSS es un prototipo desarrollado para la <br>
+                       competeci&oacute;n de BBVA Innova challenge 2014.<br>
+                        
+                       La idea en ZONEBUSS es poder comparar dos <br>
+                       zonas potenciales para estabelecer nuestro <br>
+                       negocio, basandonos en informaci&oacute;n de patrones <br>
+                       de consumo proporcionados por BBVA en base a <br>
+                       un dataset y mezclandolos con datos externos <br>
+                       de negocios cercanos a estas zonas.<br>
 
+                      
+                        </span>
+                     </p>
+                </h5>
+                     <h5><p style="text-align:justify"><span class="about">
+                 El comparar las zonas nos ayuda en tomar la <br>
+                       mejor decisi&oacute;n, enfoncandonos en el mercado<br>
+                       que mas consume , los dias, y los meses, para <br>
+                       optimizar nuestras ganancias.<br>
+
+                       Los datos de los negocios son tomados de la <br>
+                       API de Factual, donde contiene mas de un millon <br>
+                       de negocios registrados en M&eacute;xico.<br>
+                  </p>
+                </h5>
+                </div>      
             </div>
         </div>
         
     </header>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/L_u_1_z_Z_z" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-  
-                    <li>
-                        <a href="mx.linkedin.com/pub/luis-recillas/56/94a/774/" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+   
    <!-- Footer -->
     <footer>
       
@@ -143,7 +128,7 @@
     
 	
     <!-- jQuery -->
-    {{ HTML::script('js/jquery.js') }}
+    {{ HTML::script('js/jquery-2.1.1.min.js') }}
 
     <!-- Bootstrap Core JavaScript -->
     

@@ -29,6 +29,7 @@
         }
         
         .carousel-inner > .item > img { margin: 0 auto; }
+         .top-buffer { margin-bottom:49px; }
     </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +45,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
-           <img src="../img/logo.png" >
+            <img src="../img/logo.png" >
             <div class="navbar-header">
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -79,6 +80,37 @@
             <div class="container">
                 
 
+
+                
+        <div class="row top-buffer">
+            <div class="col-lg-8 col-lg-offset-2">
+              
+                <img src="../img/luis.jpg" >
+            </div>
+        </div>
+           <div class="row top-buffer">
+            <div class="col-lg-8 col-lg-offset-2">
+              
+                <h5><p><span class="about">
+                        Ingeniero en computaci&oacute;n <br>
+                        Luis Arturo P&eacute;rez Recillas.
+                </span></p></h5>
+            </div>
+        </div>
+            <div class="row top-buffer">
+            <div class="col-lg-8 col-lg-offset-2">
+              
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/L_u_1_z_Z_z" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+  
+                    <li>
+                        <a href="https://www.linkedin.com/pub/luis-recillas/56/94a/774" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
             </div>
         </div>
         
@@ -86,19 +118,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/L_u_1_z_Z_z" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-  
-                    <li>
-                        <a href="mx.linkedin.com/pub/luis-recillas/56/94a/774/" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        
     </section>
     <!-- Footer -->
     <footer>
@@ -111,14 +131,10 @@
     
 	
     <!-- jQuery -->
-    {{ HTML::script('js/jquery.js') }}
+    {{ HTML::script('js/jquery-2.1.1.min.js') }}
 
     <!-- Bootstrap Core JavaScript -->
     
-    {{ HTML::script('js/bootstrap.min.js') }}
-
-    <!-- Plugin JavaScript -->
-   
     {{ HTML::script('js/bootstrap.min.js') }}
 
     <!-- Custom Theme JavaScript -->

@@ -126,7 +126,7 @@
                                             <div class="col-md-2 col-md-offset-1">
                                             </div>
                                              <div class="col-md-6" >
-                                                <span class="descriptionTitleWizard">Elige la categoria que se adecue a tu negocio.</span> 
+                                                <span class="descriptionTitleWizard">Elige la categor&iacute;a que se adecue a tu negocio</span> 
                                             </div>
                                             <div class="col-md-2" >
                                             </div>
@@ -407,7 +407,7 @@
                                 <th></th>  
                                  <th><h5><span class="descriptionLabels">Genero<span></th>
                                  <th> <h5><span class="descriptionLabels">Rango edad<span></th>
-                                 <th> <h5><span class="descriptionLabels">Promedio compra<span></th>
+                                 <th> <h5><span class="descriptionLabels">Promedio de compra<span></th>
                               </tr>
                         </thead>
                         <tbody>
@@ -437,7 +437,7 @@
                                 <th></th>  
                                  <th><h5><span class="descriptionLabels">Genero<span></th>
                                  <th> <h5><span class="descriptionLabels">Rango edad<span></th>
-                                 <th> <h5><span class="descriptionLabels">Promedio compra<span></th>
+                                 <th> <h5><span class="descriptionLabels">Promedio de compra<span></th>
                               </tr>
                         </thead>
                         <tbody>
@@ -464,7 +464,7 @@
                  
                 <div class="alert alert-info">
                     <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    <strong>Nota!</strong> Para obtener mas infomacion del mes, haz click sobre un punto sobre la grafica.
+                    <strong>Nota!</strong> Para obtener mas infomaci&oacute;n del mes, haz click sobre un punto sobre la graf&iacute;ca.
                 </div>
              </div>
              <div  class="col-md-2">
@@ -473,7 +473,7 @@
              <div  class="col-md-4 ">
                  <div class="alert alert-info">
                     <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    <strong>Nota!</strong> Para obtener mas infomacion del mes,   haz click sobre un punto sobre la grafica.
+                  <strong>Nota!</strong> Para obtener mas infomaci&oacute;n del mes, haz click sobre un punto sobre la graf&iacute;ca.
                 </div>
              </div>
         </div>     
@@ -506,13 +506,13 @@
 
         <div class="row">
             <div  class="col-md-4 col-md-offset-1">
-                 <h5><span id="direccion" class="descriptionDirecction">Ventas totales por dia para el mes de </span></h5><h5><span id="diaWeek" class="descriptionDirecction"></span></h5>
+                 <h5><span id="direccion" class="descriptionDirecction">Ventas totales por d&iacute;a para el mes de </span></h5><h5><span id="diaWeek" class="descriptionDirecction"></span></h5>
              </div>
              <div  class="col-md-2">
                      
              </div>
              <div  class="col-md-4 ">
-                   <h5><span id="direccion" class="descriptionDirecction">Ventas totales por dia para el mes de </span></h5><h5><span id="diaWeekCompare" class="descriptionDirecction"></span></h5>
+                   <h5><span id="direccion" class="descriptionDirecction">Ventas totales por d&iacute;a para el mes de </span></h5><h5><span id="diaWeekCompare" class="descriptionDirecction"></span></h5>
              </div>
         </div>  
          <div id="weekCharts" class="row top-bufferCharts">
@@ -535,13 +535,13 @@
 
     </section>
 
-    {{ HTML::script('js/jquery.js') }}  
+    {{ HTML::script('js/jquery-2.1.1.min.js') }}  
     {{ HTML::script('js/bootstrap.min.js') }}
     {{ HTML::script('js/fuelux.min.js') }} 
     {{ HTML::script('js/mapbox.js') }}  
     {{ HTML::script('js/grayscale.js') }}
     {{ HTML::script('js/ajaxq.js') }}
-    {{ HTML::script('js/app.js') }}
+    {{ HTML::script('js/app.min.js') }}
     {{ HTML::script('js/Chart.min.js') }}
     <script>
     
