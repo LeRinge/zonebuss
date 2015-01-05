@@ -87,7 +87,7 @@
                 <div class="inner">
                  <h5><p style="text-align:justify"><span class="about">
                        ZONEBUSS es un prototipo desarrollado para la <br>
-                       competeci&oacute;n de BBVA Innova challenge 2014.<br>
+                       competici&oacute;n de BBVA Innova challenge 2014.<br>
                         
                        La idea en ZONEBUSS es poder comparar dos <br>
                        zonas potenciales para estabelecer nuestro <br>
@@ -102,7 +102,7 @@
                 </h5>
                      <h5><p style="text-align:justify"><span class="about">
                  El comparar las zonas nos ayuda en tomar la <br>
-                       mejor decisi&oacute;n, enfoncandonos en el mercado<br>
+                       mejor decisi&oacute;n, enfocandonos en el mercado<br>
                        que mas consume , los dias, y los meses, para <br>
                        optimizar nuestras ganancias.<br>
 
