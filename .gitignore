@@ -1,7 +1,13 @@
 /bootstrap/compiled.php
+<<<<<<< HEAD
 /vendor
 composer.phar
 .env.*.php
 .env.php
 .DS_Store
 Thumbs.db
+=======
+.env.*.php
+.env.php
+.env
+>>>>>>> b3e3061788dc67a500078bad40840629e9577da2
